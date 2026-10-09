@@ -1,0 +1,865 @@
+{
+ "counts": {
+  "works": 180,
+  "authors": 16,
+  "verse_by_verse_works": 31
+ },
+ "home_text": [
+  "The works of the Gauḍīya ācāryas, from Śrī Caitanya and the Gosvāmīs of Vṛndāvana to Śrīla Bhaktivinoda Ṭhākura and Śrīla Bhaktisiddhānta Sarasvatī, in the original language and in English, arranged work by work and searchable as one library."
+ ],
+ "authors": [
+  {
+   "slug": "baladeva-vidyabhusana",
+   "name": "Śrīla Baladeva Vidyābhūṣaṇa",
+   "intro": "Gauḍīya ācārya of Jaipur, disciple of Rādhā-dāmodara and student of Viśvanātha Cakravartī. At Galta he defended the Gauḍīya line by writing the Govinda-bhāṣya on the Vedānta-sūtra; also the Gītā-bhūṣaṇa, Prameya-ratnāvalī, Siddhānta-ratna and commentaries on the Upaniṣads, the Bhāgavatam and the works of the Gosvāmīs.",
+   "works": [
+    {
+     "title": "Govinda-bhāṣya (on the Vedānta-sūtra)",
+     "href": "../w/govinda-bhasya/index.html"
+    },
+    {
+     "title": "Prameya-ratnāvalī",
+     "href": "../w/prameya-ratnavali/index.html"
+    },
+    {
+     "title": "Siddhānta-ratna",
+     "href": "../w/siddhanta-ratna/index.html"
+    },
+    {
+     "title": "Vedānta-syamantaka",
+     "href": "../w/vedanta-syamantaka/index.html"
+    },
+    {
+     "title": "Siddhānta-darpaṇa",
+     "href": "../w/siddhanta-darpana/index.html"
+    },
+    {
+     "title": "Gītā-bhūṣaṇa (on the Bhagavad-gītā)",
+     "href": "../w/gita-bhusana/index.html"
+    },
+    {
+     "title": "Aiśvarya-kādambinī",
+     "href": "../w/aisvarya-kadambini/index.html"
+    },
+    {
+     "title": "Gopāla-tāpanī-bhāṣya",
+     "href": "../w/gopala-tapani-bhasya/index.html"
+    },
+    {
+     "title": "Nāmārtha-sudhā (on the Viṣṇu-sahasra-nāma)",
+     "href": "../w/namartha-sudha/index.html"
+    },
+    {
+     "title": "Sāhitya-kaumudī",
+     "href": "../w/sahitya-kaumudi/index.html"
+    },
+    {
+     "title": "Kāvya-kaustubha",
+     "href": "../w/kavya-kaustubha/index.html"
+    },
+    {
+     "title": "Chandaḥ-kaustubha-bhāṣya",
+     "href": "../w/chandah-kaustubha-bhasya/index.html"
+    },
+    {
+     "title": "Tattva-dīpikā",
+     "href": "../w/tattva-dipika/index.html"
+    },
+    {
+     "title": "Śyāmānanda-śataka-ṭīkā",
+     "href": "../w/syamananda-sataka-tika/index.html"
+    },
+    {
+     "title": "Sāraṅga-raṅgadā (on Laghu-bhāgavatāmṛta)",
+     "href": "../w/laghu-bhagavatamrta-saranga-rangada/index.html"
+    }
+   ]
+  },
+  {
+   "slug": "bhaktisiddhanta-sarasvati",
+   "name": "Śrīla Bhaktisiddhānta Sarasvatī Ṭhākura",
+   "intro": "Son of Bhaktivinoda and founder of the Gauḍīya Maṭha. Author of the Anubhāṣya on Caitanya-caritāmṛta, lectures, essays and letters; spiritual master of A. C. Bhaktivedanta Swami Prabhupāda.",
+   "works": [
+    {
+     "title": "Anubhāṣya on Śrī Caitanya-caritāmṛta",
+     "href": "../w/anubhasya/index.html"
+    },
+    {
+     "title": "Śrī Caitanya's Teachings",
+     "href": "../w/sri-caitanyas-teachings/index.html"
+    },
+    {
+     "title": "Śrī Gauḍīya-kaṇṭhahāra",
+     "href": "../w/gaudiya-kanthahara/index.html"
+    },
+    {
+     "title": "Śrī Sarasvatī-saṁlāpa",
+     "href": "../w/sarasvati-sanlapa/index.html"
+    },
+    {
+     "title": "Vaktṛtāvalī (Lectures)",
+     "href": "../w/vaktritavali/index.html"
+    },
+    {
+     "title": "Amṛta-vāṇī",
+     "href": "../w/amrta-vani/index.html"
+    },
+    {
+     "title": "Patrāmṛta (Letters)",
+     "href": "../w/patramrta/index.html"
+    },
+    {
+     "title": "Vaiṣṇava Ke?",
+     "href": "../w/vaisnava-ke/index.html"
+    },
+    {
+     "title": "Rāya Rāmānanda",
+     "href": "../w/rai-ramananda/index.html"
+    },
+    {
+     "title": "A Few Words on Vedānta",
+     "href": "../w/few-words-on-vedanta/index.html"
+    },
+    {
+     "title": "Be Humbler than a Blade of Grass",
+     "href": "../w/be-humbler-than-a-blade-of-grass/index.html"
+    },
+    {
+     "title": "Gauḍīya-bhāṣya on Prameya-ratnāvalī",
+     "href": "../w/prameya-ratnavali-gaudiya-bhasya/index.html"
+    },
+    {
+     "title": "Prabandhāvalī (essays)",
+     "href": "../w/prabandhavali/index.html"
+    },
+    {
+     "title": "Vaktṛtāvalī (Bengali)",
+     "href": "../w/vaktrtavali-bengali/index.html"
+    },
+    {
+     "title": "Maṇi-mañjarī (edition and Bengali translation)",
+     "href": "../w/mani-manjari/index.html"
+    },
+    {
+     "title": "Śrīmad-Bhāgavata-tātparya",
+     "href": "../w/srimad-bhagavata-tatparya/index.html"
+    },
+    {
+     "title": "Upadeśāmṛta with the Anuvṛtti",
+     "href": "../w/upadesamrta-anuvrtti/index.html"
+    }
+   ]
+  },
+  {
+   "slug": "bhaktivinoda-thakura",
+   "name": "Śrīla Bhaktivinoda Ṭhākura",
+   "intro": "Magistrate, writer and reformer who revived the Gauḍīya tradition in the nineteenth century: Jaiva-dharma, Hari-nāma-cintāmaṇi, Śaraṇāgati, commentaries and a large body of songs and essays.",
+   "works": [
+    {
+     "title": "Amṛta-pravāha-bhāṣya (Commentary on Śrī Caitanya-caritāmṛta)",
+     "href": "../w/amrta-pravaha-bhasya-commentary-on-sri-caitanya-caritamrta/index.html"
+    },
+    {
+     "title": "Bhakti-siddhāntāmṛtam (The Nectar of Devotional Conclusions)",
+     "href": "../w/bhakti-siddhantamrtam-the-nectar-of-devotional-conclusions/index.html"
+    },
+    {
+     "title": "Bhakti-tattva-viveka",
+     "href": "../w/bhakti-tattva-viveka/index.html"
+    },
+    {
+     "title": "Bhāgavatārka Marīci Mālā",
+     "href": "../w/bhagavatarka-marici-mala/index.html"
+    },
+    {
+     "title": "Chaitanya Mahaprabhu His Life and Precepts",
+     "href": "../w/chaitanya-mahaprabhu-his-life-and-precepts/index.html"
+    },
+    {
+     "title": "Datta-kaustubham",
+     "href": "../w/datta-kaustubham/index.html"
+    },
+    {
+     "title": "Gaurāṅga-līlā-smaraṇa-maṅgala-stotram",
+     "href": "../w/gauranga-lila-smarana-mangala-stotram/index.html"
+    },
+    {
+     "title": "Introduction to Garbha Stotra",
+     "href": "../w/introduction-to-garbha-stotra/index.html"
+    },
+    {
+     "title": "Rasa Saṅketa",
+     "href": "../w/rasa-sanketa/index.html"
+    },
+    {
+     "title": "Rasika-rañjana (Commentary on Bhagavad-gītā)",
+     "href": "../w/rasika-ranjana-commentary-on-bhagavad-gita/index.html"
+    },
+    {
+     "title": "Sva-niyama Dvādaśakam",
+     "href": "../w/sva-niyama-dvadasakam/index.html"
+    },
+    {
+     "title": "Tattva Sūtra",
+     "href": "../w/tattva-sutra/index.html"
+    },
+    {
+     "title": "The Poriade",
+     "href": "../w/the-poriade/index.html"
+    },
+    {
+     "title": "The Sannyasi",
+     "href": "../w/the-sannyasi/index.html"
+    },
+    {
+     "title": "Vaiṣṇava Nimantraṇa (Invitation to the Vaiṣṇavas)",
+     "href": "../w/vaisnava-nimantrana-invitation-to-the-vaisnavas/index.html"
+    },
+    {
+     "title": "Īśopaniṣad",
+     "href": "../w/isopanisad/index.html"
+    },
+    {
+     "title": "Śrī Brahma-saṁhitā Prakāśinī Commentary",
+     "href": "../w/sri-brahma-samhita-prakasini-commentary/index.html"
+    },
+    {
+     "title": "Śrī Gīta Govinda Introduction",
+     "href": "../w/sri-gita-govinda-introduction/index.html"
+    },
+    {
+     "title": "Śrī Hari Nāma",
+     "href": "../w/sri-hari-nama/index.html"
+    },
+    {
+     "title": "Śrī Kṛṣṇa Bhajanāmṛtam",
+     "href": "../w/sri-krsna-bhajanamrtam/index.html"
+    },
+    {
+     "title": "Śrī Kṛṣṇacandra",
+     "href": "../w/sri-krsnacandra/index.html"
+    },
+    {
+     "title": "Śrī Navadvīpa Bhāva Taraṅga",
+     "href": "../w/sri-navadvipa-bhava-taranga/index.html"
+    },
+    {
+     "title": "Śrī Navadvīpa-dhāma Māhātmya",
+     "href": "../w/sri-navadvipa-dhama-mahatmya/index.html"
+    },
+    {
+     "title": "Śrī Nāma Mahimā",
+     "href": "../w/sri-nama-mahima/index.html"
+    },
+    {
+     "title": "Śrī Nāma Pracāra",
+     "href": "../w/sri-nama-pracara/index.html"
+    },
+    {
+     "title": "Śrīman Mahāprabhura Śikṣā",
+     "href": "../w/sriman-mahaprabhura-siksa/index.html"
+    },
+    {
+     "title": "Bāula Saṅgīta Introduction",
+     "href": "../w/baula-sangita-introduction/index.html"
+    },
+    {
+     "title": "Hari-nāma Cintāmaṇi",
+     "href": "../w/hari-nama-cintamani/index.html"
+    },
+    {
+     "title": "Instructions for Engaging in Bhajana of the Moon of Godruma",
+     "href": "../w/instructions-for-engaging-in-bhajana-of-the-moon-of-godruma/index.html"
+    },
+    {
+     "title": "Kalyāṇa-kalpataru",
+     "href": "../w/kalyana-kalpataru/index.html"
+    },
+    {
+     "title": "Prema Pradipa",
+     "href": "../w/prema-pradipa/index.html"
+    },
+    {
+     "title": "Vaiṣṇava Siddhānta Mālā 1.1",
+     "href": "../w/vaisnava-siddhanta-mala-1-1/index.html"
+    },
+    {
+     "title": "Śrī Caitanya Upaniṣad",
+     "href": "../w/sri-caitanya-upanisad/index.html"
+    },
+    {
+     "title": "Śrī Caitanya-śikṣāmṛta",
+     "href": "../w/sri-caitanya-siksamrta/index.html"
+    },
+    {
+     "title": "Śrī Godruma Kalpāṭavī",
+     "href": "../w/sri-godruma-kalpatavi/index.html"
+    },
+    {
+     "title": "Śrī Gīta-mālā",
+     "href": "../w/sri-gita-mala/index.html"
+    },
+    {
+     "title": "Śrī Kṛṣṇa-saṁhitā",
+     "href": "../w/sri-krsna-samhita/index.html"
+    },
+    {
+     "title": "Śrī Upadeśāmṛta Bhāṣā",
+     "href": "../w/sri-upadesamrta-bhasa/index.html"
+    },
+    {
+     "title": "Śrī Śikṣāṣṭakam Verse Eight",
+     "href": "../w/sri-siksastakam-verse-eight/index.html"
+    },
+    {
+     "title": "Vidvad-rañjana (Bhagavad-gītā commentary)",
+     "href": "../w/vidvad-ranjana/index.html"
+    },
+    {
+     "title": "Bhajana-rahasya",
+     "href": "../w/bhajana-rahasya/index.html"
+    },
+    {
+     "title": "Godrumacandra-bhajanopadeśa",
+     "href": "../w/godrumacandra-bhajanopadesa/index.html"
+    },
+    {
+     "title": "Tattva-viveka",
+     "href": "../w/tattva-viveka/index.html"
+    },
+    {
+     "title": "Prabandhāvalī (essays)",
+     "href": "../w/bvt-prabandhavali/index.html"
+    },
+    {
+     "title": "Śrī Āmnāya-sūtra",
+     "href": "../w/amnaya-sutra/index.html"
+    },
+    {
+     "title": "Svalikhita-jīvanī (Autobiography)",
+     "href": "../w/svalikhita-jivani/index.html"
+    },
+    {
+     "title": "Śaraṇāgati",
+     "href": "../w/saranagati/index.html"
+    },
+    {
+     "title": "Jaiva-dharma",
+     "href": "../w/jaiva-dharma/index.html"
+    },
+    {
+     "title": "Gītāvalī",
+     "href": "../w/gitavali/index.html"
+    }
+   ]
+  },
+  {
+   "slug": "caitanya-mahaprabhu",
+   "name": "Śrī Caitanya Mahāprabhu",
+   "intro": "Śrī Kṛṣṇa Caitanya Mahāprabhu, who began the saṅkīrtana movement in Navadvīpa. He left only eight verses of instruction, the Śikṣāṣṭaka, given here with the commentaries of Bhaktivinoda Ṭhākura and Bhaktisiddhānta Sarasvatī Ṭhākura.",
+   "works": [
+    {
+     "title": "Śrī Śikṣāṣṭaka",
+     "href": "../w/siksastaka/index.html"
+    }
+   ]
+  },
+  {
+   "slug": "jiva-gosvami",
+   "name": "Śrīla Jīva Gosvāmī",
+   "intro": "Nephew of Rūpa and Sanātana and the great systematiser of Gauḍīya theology: the six Sandarbhas, Gopāla-campū, Hari-nāmāmṛta-vyākaraṇa and many commentaries.",
+   "works": [
+    {
+     "title": "Tattva-sandarbha",
+     "href": "../w/tattva-sandarbha/index.html"
+    },
+    {
+     "title": "Bhagavat-sandarbha",
+     "href": "../w/bhagavat-sandarbha/index.html"
+    },
+    {
+     "title": "Paramātma-sandarbha",
+     "href": "../w/paramatma-sandarbha/index.html"
+    },
+    {
+     "title": "Kṛṣṇa-sandarbha",
+     "href": "../w/krsna-sandarbha/index.html"
+    },
+    {
+     "title": "Prīti-sandarbha",
+     "href": "../w/priti-sandarbha/index.html"
+    },
+    {
+     "title": "Gopāla-campū",
+     "href": "../w/gopala-campu/index.html"
+    },
+    {
+     "title": "Mādhava-mahotsava",
+     "href": "../w/madhava-mahotsava/index.html"
+    },
+    {
+     "title": "Saṅkalpa-kalpadruma",
+     "href": "../w/sankalpa-kalpadruma/index.html"
+    },
+    {
+     "title": "Bhakti-rasāmṛta-śeṣa",
+     "href": "../w/bhakti-rasamrta-sesa/index.html"
+    },
+    {
+     "title": "Rādhā-kṛṣṇārcana-dīpikā",
+     "href": "../w/radha-krsnarcana-dipika/index.html"
+    },
+    {
+     "title": "Hari-nāmāmṛta-vyākaraṇa",
+     "href": "../w/hari-namamrta-vyakarana/index.html"
+    },
+    {
+     "title": "Gopāla-virudāvalī",
+     "href": "../w/gopala-virudavali/index.html"
+    },
+    {
+     "title": "Vaiṣṇava-vandanā",
+     "href": "../w/vaisnava-vandana/index.html"
+    },
+    {
+     "title": "Gāyatrī-vyākhyā",
+     "href": "../w/gayatri-vyakhya/index.html"
+    },
+    {
+     "title": "Letters (Patra-catuṣkam) and Antima-saṅkalpa",
+     "href": "../w/patra-catuskam/index.html"
+    },
+    {
+     "title": "Sarva-saṁvādinī",
+     "href": "../w/sarva-samvadini/index.html"
+    },
+    {
+     "title": "Gopāla-tāpanī-ṭīkā (Sukha-bodhinī)",
+     "href": "../w/gopala-tapani-tika/index.html"
+    },
+    {
+     "title": "Laghu-vaiṣṇava-toṣaṇī (on the Tenth Canto)",
+     "href": "../w/laghu-vaisnava-tosani/index.html"
+    },
+    {
+     "title": "Bhakti-sandarbha",
+     "href": "../w/bhakti-sandarbha/index.html"
+    },
+    {
+     "title": "Brahma-saṁhitā (Fifth Chapter)",
+     "href": "../w/brahma-samhita/index.html"
+    }
+   ]
+  },
+  {
+   "slug": "kavi-karnapura",
+   "name": "Śrīla Kavi-karṇapūra",
+   "intro": "Paramānanda Sena, youngest son of Śivānanda Sena, blessed as a child by Śrī Caitanya at Purī. Author of Caitanya-candrodaya-nāṭaka, Gaura-gaṇoddeśa-dīpikā, Ānanda-vṛndāvana-campū, Alaṅkāra-kaustubha and Caitanya-carita-mahākāvya.",
+   "works": [
+    {
+     "title": "Caitanya-candrodaya-nāṭaka",
+     "href": "../w/caitanya-candrodaya/index.html"
+    },
+    {
+     "title": "Ānanda-vṛndāvana-campū",
+     "href": "../w/ananda-vrndavana-campu/index.html"
+    },
+    {
+     "title": "Alaṅkāra-kaustubha",
+     "href": "../w/alankara-kaustubha/index.html"
+    },
+    {
+     "title": "Gaura-gaṇoddeśa-dīpikā",
+     "href": "../w/gaura-ganoddesa-dipika/index.html"
+    },
+    {
+     "title": "Kṛṣṇāhnika-kaumudī",
+     "href": "../w/krsnahnika-kaumudi/index.html"
+    },
+    {
+     "title": "Caitanya-carita-mahākāvya",
+     "href": "../w/caitanya-carita-mahakavya/index.html"
+    }
+   ]
+  },
+  {
+   "slug": "krsnadasa-kaviraja",
+   "name": "Śrīla Kṛṣṇadāsa Kavirāja Gosvāmī",
+   "intro": "Author of Śrī Caitanya-caritāmṛta, the biography and teachings of Śrī Caitanya Mahāprabhu, written in Vṛndāvana under the guidance of the Gosvāmīs. Here with the two commentaries of the Gauḍīya Maṭha edition and Śrīla Prabhupāda's translation.",
+   "works": [
+    {
+     "title": "Govinda-līlāmṛta",
+     "href": "../w/govinda-lilamrta/index.html"
+    },
+    {
+     "title": "Sāraṅga-raṅgadā (on Kṛṣṇa-karṇāmṛta)",
+     "href": "../w/krsna-karnamrta-saranga-rangada/index.html"
+    },
+    {
+     "title": "Śrī Caitanya-caritāmṛta",
+     "href": "../w/caitanya-caritamrta/index.html"
+    }
+   ]
+  },
+  {
+   "slug": "locana-dasa-thakura",
+   "name": "Śrīla Locana dāsa Ṭhākura",
+   "intro": "Disciple of Narahari Sarakāra Ṭhākura of Śrīkhaṇḍa. Author of the Bengali Caitanya-maṅgala and of songs sung in Śrīla Prabhupāda's temples, such as Parama Koruṇā.",
+   "works": [
+    {
+     "title": "Śrī Caitanya-maṅgala",
+     "href": "../w/caitanya-mangala/index.html"
+    },
+    {
+     "title": "Dhāmālī",
+     "href": "../w/dhamali/index.html"
+    }
+   ]
+  },
+  {
+   "slug": "narottama-dasa-thakura",
+   "name": "Śrīla Narottama dāsa Ṭhākura",
+   "intro": "Disciple of Lokanātha Gosvāmī and trained by Jīva Gosvāmī, he brought the teachings of the Gosvāmīs to Bengal and organised the festival at Kheturī. His songs, Prārthanā and Prema-bhakti-candrikā, are quoted constantly by Śrīla Prabhupāda.",
+   "works": [
+    {
+     "title": "Prārthanā",
+     "href": "../w/prarthana/index.html"
+    },
+    {
+     "title": "Kuñja-varṇana",
+     "href": "../w/kunja-varnana/index.html"
+    },
+    {
+     "title": "Śrī Prema-bhakti-candrikā",
+     "href": "../w/prema-bhakti-candrika/index.html"
+    }
+   ]
+  },
+  {
+   "slug": "prabodhananda-sarasvati",
+   "name": "Śrīla Prabodhānanda Sarasvatī",
+   "intro": "Sannyāsī from South India, uncle and teacher of Gopāla Bhaṭṭa Gosvāmī, who met Śrī Caitanya at Śrīraṅgam. Author of Caitanya-candrāmṛta, Rādhā-rasa-sudhā-nidhi and Vṛndāvana-mahimāmṛta.",
+   "works": [
+    {
+     "title": "Vṛndāvana-mahimāmṛta",
+     "href": "../w/vrndavana-mahimamrta/index.html"
+    },
+    {
+     "title": "Rādhā-rasa-sudhā-nidhi",
+     "href": "../w/radha-rasa-sudha-nidhi/index.html"
+    },
+    {
+     "title": "Saṅgīta-mādhava",
+     "href": "../w/sangita-madhava/index.html"
+    },
+    {
+     "title": "Navadvīpa-śataka",
+     "href": "../w/navadvipa-sataka/index.html"
+    },
+    {
+     "title": "Āścarya-rāsa-prabandha",
+     "href": "../w/ascarya-rasa-prabandha/index.html"
+    },
+    {
+     "title": "Prema-vilāsa-stotra",
+     "href": "../w/prema-vilasa-stotra/index.html"
+    },
+    {
+     "title": "Nikuñja-rahasya-stava",
+     "href": "../w/nikunja-rahasya-stava/index.html"
+    },
+    {
+     "title": "Kāma-bīja-kāma-gāyatrī-vyākhyā",
+     "href": "../w/kama-bija-gayatri-vyakhya/index.html"
+    },
+    {
+     "title": "Prabandha-pañcakam",
+     "href": "../w/prabandha-pancakam/index.html"
+    },
+    {
+     "title": "Śrī-gīta-govinda-vyākhyāna",
+     "href": "../w/gita-govinda-vyakhyana/index.html"
+    },
+    {
+     "title": "Śrī Caitanya-candrāmṛta",
+     "href": "../w/caitanya-candramrta/index.html"
+    }
+   ]
+  },
+  {
+   "slug": "raghunatha-dasa-gosvami",
+   "name": "Śrīla Raghunātha dāsa Gosvāmī",
+   "intro": "Renounced great wealth to live with Śrī Caitanya at Purī under Svarūpa Dāmodara; later lived at Rādhā-kuṇḍa. Author of Stavāvalī, Muktā-carita and Dāna-keli-cintāmaṇi.",
+   "works": [
+    {
+     "title": "Stavāvalī",
+     "href": "../w/stavavali/index.html"
+    },
+    {
+     "title": "Muktā-carita",
+     "href": "../w/mukta-carita/index.html"
+    },
+    {
+     "title": "Dāna-keli-cintāmaṇi",
+     "href": "../w/dana-keli-cintamani/index.html"
+    },
+    {
+     "title": "Manaḥ-śikṣā",
+     "href": "../w/manah-siksa/index.html"
+    }
+   ]
+  },
+  {
+   "slug": "rupa-gosvami",
+   "name": "Śrīla Rūpa Gosvāmī",
+   "intro": "Chief of the six Gosvāmīs of Vṛndāvana. Instructed by Śrī Caitanya at Prayāga (CC Madhya 19), he set out the theology of bhakti-rasa in Bhakti-rasāmṛta-sindhu and Ujjvala-nīlamaṇi and wrote dramas, poems and hymns.",
+   "works": [
+    {
+     "title": "Bhakti-rasāmṛta-sindhu",
+     "href": "../w/bhakti-rasamrta-sindhu/index.html"
+    },
+    {
+     "title": "Ujjvala-nīlamaṇi",
+     "href": "../w/ujjvala-nilamani/index.html"
+    },
+    {
+     "title": "Laghu-bhāgavatāmṛta",
+     "href": "../w/laghu-bhagavatamrta/index.html"
+    },
+    {
+     "title": "Stava-mālā",
+     "href": "../w/stava-mala/index.html"
+    },
+    {
+     "title": "Upadeśāmṛta",
+     "href": "../w/upadesamrta/index.html"
+    },
+    {
+     "title": "Padyāvalī",
+     "href": "../w/padyavali/index.html"
+    },
+    {
+     "title": "Haṁsadūta",
+     "href": "../w/hamsaduta/index.html"
+    },
+    {
+     "title": "Uddhava-sandeśa",
+     "href": "../w/uddhava-sandesa/index.html"
+    },
+    {
+     "title": "Vidagdha-mādhava",
+     "href": "../w/vidagdha-madhava/index.html"
+    },
+    {
+     "title": "Lalita-mādhava",
+     "href": "../w/lalita-madhava/index.html"
+    },
+    {
+     "title": "Dāna-keli-kaumudī",
+     "href": "../w/dana-keli-kaumudi/index.html"
+    },
+    {
+     "title": "Nāṭaka-candrikā",
+     "href": "../w/nataka-candrika/index.html"
+    },
+    {
+     "title": "Mathurā-māhātmya",
+     "href": "../w/mathura-mahatmya/index.html"
+    },
+    {
+     "title": "Rādhā-kṛṣṇa-gaṇoddeśa-dīpikā",
+     "href": "../w/radha-krsna-ganoddesa-dipika/index.html"
+    },
+    {
+     "title": "Sāmānya-virudāvalī-lakṣaṇa",
+     "href": "../w/samanya-virudavali-laksana/index.html"
+    },
+    {
+     "title": "Kṛṣṇa-janma-tithi-vidhi",
+     "href": "../w/krsna-janma-tithi-vidhi/index.html"
+    },
+    {
+     "title": "Prayuktākhyāta-mañjarī",
+     "href": "../w/prayuktakhyata-manjari/index.html"
+    }
+   ]
+  },
+  {
+   "slug": "sanatana-gosvami",
+   "name": "Śrīla Sanātana Gosvāmī",
+   "intro": "Elder brother of Rūpa. Instructed by Śrī Caitanya at Vārāṇasī (CC Madhya 20–24). Author of Bṛhad-bhāgavatāmṛta; Hari-bhakti-vilāsa, the Gauḍīya manual of Vaiṣṇava practice, is traditionally attributed to him with Gopāla Bhaṭṭa.",
+   "works": [
+    {
+     "title": "Bṛhad-bhāgavatāmṛta",
+     "href": "../w/brhad-bhagavatamrta/index.html"
+    },
+    {
+     "title": "Hari-bhakti-vilāsa",
+     "href": "../w/hari-bhakti-vilasa/index.html"
+    },
+    {
+     "title": "Kṛṣṇa-līlā-stava",
+     "href": "../w/krsna-lila-stava/index.html"
+    },
+    {
+     "title": "Bṛhad-vaiṣṇava-toṣaṇī (on the Tenth Canto)",
+     "href": "../w/brhad-vaisnava-tosani/index.html"
+    }
+   ]
+  },
+  {
+   "slug": "visvanatha-cakravarti",
+   "name": "Śrīla Viśvanātha Cakravartī Ṭhākura",
+   "intro": "Ācārya in the line of Narottama dāsa Ṭhākura, author of the Sārārtha-darśinī commentaries on the Bhāgavatam and the Gītā. Here his Stavāmṛta-laharī, whose first hymn, the Gurv-aṣṭaka, is sung every morning in Śrīla Prabhupāda's temples, and his Mādhurya-kādambinī on the stages of bhakti, both in Bhanu Swami's English.",
+   "works": [
+    {
+     "title": "Bhakti-rasāmṛta-sindhu-bindu",
+     "href": "../w/bhakti-rasamrta-sindhu-bindu/index.html"
+    },
+    {
+     "title": "Rāga-vartma-candrikā",
+     "href": "../w/raga-vartma-candrika/index.html"
+    },
+    {
+     "title": "Ujjvala-nīlamaṇi-kiraṇa",
+     "href": "../w/ujjvala-nilamani-kirana/index.html"
+    },
+    {
+     "title": "Kṛṣṇa-bhāvanāmṛta",
+     "href": "../w/krsna-bhavanamrta/index.html"
+    },
+    {
+     "title": "Camatkāra-candrikā",
+     "href": "../w/camatkara-candrika/index.html"
+    },
+    {
+     "title": "Prema-sampuṭa",
+     "href": "../w/prema-samputa/index.html"
+    },
+    {
+     "title": "Vraja-rīti-cintāmaṇi",
+     "href": "../w/vraja-riti-cintamani/index.html"
+    },
+    {
+     "title": "Svakīyā-parakīyā-rasa-vicāra",
+     "href": "../w/svakiya-parakiya-rasa-vicara/index.html"
+    },
+    {
+     "title": "Kṣaṇadā-gīta-cintāmaṇi",
+     "href": "../w/ksanada-gita-cintamani/index.html"
+    },
+    {
+     "title": "Sārārtha-darśinī (on Śrīmad-Bhāgavatam)",
+     "href": "../w/sarartha-darsini/index.html"
+    },
+    {
+     "title": "Sārārtha-varṣiṇī (on the Bhagavad-gītā)",
+     "href": "../w/sarartha-varsini/index.html"
+    },
+    {
+     "title": "Śrī Stavāmṛta-laharī",
+     "href": "../w/stavamrta-lahari/index.html"
+    },
+    {
+     "title": "Mādhurya-kādambinī",
+     "href": "../w/madhurya-kadambini/index.html"
+    }
+   ]
+  },
+  {
+   "slug": "vrndavana-dasa-thakura",
+   "name": "Śrīla Vṛndāvana dāsa Ṭhākura",
+   "intro": "Son of Nārāyaṇī and disciple of Nityānanda Prabhu, called the Vyāsa of Caitanya-līlā. His Caitanya-bhāgavata is the first full biography of Śrī Caitanya, given here with Śrīla Bhaktisiddhānta Sarasvatī Ṭhākura's Gauḍīya-bhāṣya in English.",
+   "works": [
+    {
+     "title": "Śrī Caitanya-bhāgavata",
+     "href": "../w/caitanya-bhagavata/index.html"
+    }
+   ]
+  },
+  {
+   "slug": "vyasadeva",
+   "name": "Śrīla Vyāsadeva",
+   "intro": "Compiler of the Vedic literature and author of Śrīmad-Bhāgavatam. Its Tenth Canto is given here with the commentaries of the Gauḍīya ācāryas and of Śrīdhara Svāmī.",
+   "works": [
+    {
+     "title": "Śrīmad-Bhāgavatam, First Canto",
+     "href": "../w/srimad-bhagavatam-1/index.html"
+    },
+    {
+     "title": "Śrīmad-Bhāgavatam, Second Canto",
+     "href": "../w/srimad-bhagavatam-2/index.html"
+    },
+    {
+     "title": "Śrīmad-Bhāgavatam, Third Canto",
+     "href": "../w/srimad-bhagavatam-3/index.html"
+    },
+    {
+     "title": "Śrīmad-Bhāgavatam, Fourth Canto",
+     "href": "../w/srimad-bhagavatam-4/index.html"
+    },
+    {
+     "title": "Śrīmad-Bhāgavatam, Fifth Canto",
+     "href": "../w/srimad-bhagavatam-5/index.html"
+    },
+    {
+     "title": "Śrīmad-Bhāgavatam, Sixth Canto",
+     "href": "../w/srimad-bhagavatam-6/index.html"
+    },
+    {
+     "title": "Śrīmad-Bhāgavatam, Seventh Canto",
+     "href": "../w/srimad-bhagavatam-7/index.html"
+    },
+    {
+     "title": "Śrīmad-Bhāgavatam, Eighth Canto",
+     "href": "../w/srimad-bhagavatam-8/index.html"
+    },
+    {
+     "title": "Śrīmad-Bhāgavatam, Ninth Canto",
+     "href": "../w/srimad-bhagavatam-9/index.html"
+    },
+    {
+     "title": "Śrīmad-Bhāgavatam, Eleventh Canto",
+     "href": "../w/srimad-bhagavatam-11/index.html"
+    },
+    {
+     "title": "Śrīmad-Bhāgavatam, Twelfth Canto",
+     "href": "../w/srimad-bhagavatam-12/index.html"
+    },
+    {
+     "title": "Śrī Īśopaniṣad",
+     "href": "../w/sri-isopanisad/index.html"
+    },
+    {
+     "title": "Śrīmad Bhagavad-gītā",
+     "href": "../w/bhagavad-gita/index.html"
+    },
+    {
+     "title": "Śrīmad-Bhāgavatam, Tenth Canto",
+     "href": "../w/srimad-bhagavatam-10/index.html"
+    }
+   ]
+  }
+ ],
+ "upadesamrta_index_text": [
+  "The eleven verses with all commentaries",
+  "Part 1 · ||1||–||11||",
+  "The Nectar of Instruction Śrī Upadeśāmṛta",
+  "NoI Preface",
+  "NoI: verse 1",
+  "NoI: verse 2",
+  "NoI: verse 3",
+  "NoI: verse 4",
+  "NoI: verse 5",
+  "NoI: verse 6",
+  "NoI: verse 7",
+  "NoI: verse 8",
+  "NoI: verse 9",
+  "NoI: verse 10",
+  "NoI: verse 11"
+ ],
+ "release_plan_draft": [
+  "Upadesamrta: 11 verses with all commentaries (first release, when acaryapedia.org is handed over)",
+  "Further works in stages, most relevant to Srila Prabhupada's followers first (order to be set by Mahendra)"
+ ]
+}

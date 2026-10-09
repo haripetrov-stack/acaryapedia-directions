@@ -1,0 +1,170 @@
+/* Acaryapedia, direction 4: home page only (index.html). Loaded after style.css. Acts, chapters, books. */
+
+/* ------------------------------------------------------------- leaves -- */
+.leaf { --focus: var(--ink); background: var(--leaf); color: var(--ink); position: relative;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .8), 0 2px 5px rgba(4, 14, 18, .32), 0 22px 44px -18px rgba(4, 14, 18, .7); }
+.leaf--old { background: var(--leaf-old); }
+.leaf--mid { background: var(--leaf-mid); }
+.vlink { color: var(--link); font-weight: 600; }
+.leaf .vlink { text-decoration-thickness: 1.5px; }
+
+/* ================================================== act 1: the turn ===== */
+.turn { background: var(--desk); color: var(--on-desk); --focus: var(--thread); position: relative; }
+.turn__stage { display: flex; flex-direction: column; align-items: flex-start; gap: 2rem; padding: calc(var(--bar) + 2rem) var(--gut) 4rem; }
+.turn__stack { display: contents; }
+.leaf--title { order: 1; }
+.turn__lead { order: 2; }
+.turn__under { order: 3; width: min(100%, 26rem); }
+.turn__cap { order: 4; }
+.turn__ghost { display: none; }
+.leaf--title { width: min(100%, 28rem); container-type: inline-size; padding: clamp(1.4rem, 7%, 2.4rem); display: flex; flex-direction: column; gap: 2.2rem; justify-content: space-between; min-height: 24rem; }
+.leaf--title .who { font-size: .98rem; font-weight: 600; color: var(--ink-soft); }
+.leaf--title h1 { font-size: 2.4rem; font-size: clamp(2.1rem, 14.2cqi, 4rem); letter-spacing: -.012em; line-height: 1.02; }
+.leaf--title .src { font-size: .95rem; line-height: 1.5; display: grid; gap: .55rem; }
+.leaf--title .src small { color: var(--ink-soft); font-size: .84rem; line-height: 1.4; }
+.leaf--scan { overflow: hidden; margin: 0; aspect-ratio: 700 / 1128; }
+.leaf--scan img { width: 100%; height: 100%; object-fit: cover; }
+.leaf__shade { display: none; }
+.thread-over { position: absolute; inset: 0; width: 100%; height: 100%; }
+.thread-over path { fill: none; stroke: var(--thread-ink); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 0; }
+.turn__lead, .turn__cap { max-width: 28rem; }
+@media (min-width: 860px) {
+  .turn__stage { display: grid; grid-template-columns: minmax(0, 28rem) minmax(0, 26rem); grid-template-areas: "title scan" "lead cap"; gap: 2.2rem 4rem; align-items: start; }
+  .leaf--title { grid-area: title; } .turn__under { grid-area: scan; width: auto; } .turn__lead { grid-area: lead; } .turn__cap { grid-area: cap; }
+}
+
+.turn__lead { font-family: var(--serif); font-size: 1.32rem; line-height: 1.45; color: var(--on-desk); }
+.turn__cap h2 { font-size: clamp(1.75rem, 1.2rem + 2vw, 2.6rem); line-height: 1.06; margin-bottom: .8rem; }
+.turn__cap p { font-size: 1rem; line-height: 1.55; color: var(--on-desk-soft); }
+.turn__cap a { color: var(--on-desk); text-decoration-thickness: 2px; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .turn.sc-act--pinned {
+    --p: var(--sc-p, 0);
+    --l: clamp(0, calc((var(--p) - .08) / .30), 1);
+    --le: calc(var(--l) * var(--l) * (3 - 2 * var(--l)));
+    --s: clamp(0, calc((var(--p) - .11) / .32), 1);
+    --se: calc(var(--s) * var(--s) * (3 - 2 * var(--s)));
+    --leaf-h: min(56svh, 31rem);
+    --leaf-w: calc(var(--leaf-h) * .62);
+  }
+  .turn.sc-act--pinned .turn__stage { display: block; padding: 0; }
+  .turn.sc-act--pinned .turn__stack { display: block; position: absolute; z-index: 2; perspective: 1800px; perspective-origin: 50% 0;
+    left: 50%; top: calc(var(--bar) + 1.1rem); width: var(--leaf-w); height: var(--leaf-h); margin-left: calc(var(--leaf-w) / -2); }
+  .turn.sc-act--pinned .turn__under { position: absolute; inset: -15px 0 15px; width: auto; z-index: 1; }
+  .turn.sc-act--pinned .leaf--scan { position: absolute; inset: 0; aspect-ratio: auto;
+    transform: translate(calc((1 - var(--se)) * -3.8%), calc((1 - var(--se)) * 2.6%)) rotate(calc((1 - var(--se)) * -2.4deg)); }
+  .turn.sc-act--pinned .leaf__shade { display: block; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(to bottom, rgba(5, 15, 18, .62), rgba(5, 15, 18, 0) 70%); opacity: calc(var(--l) * (1 - var(--l)) * 2.6); }
+  .turn.sc-act--pinned .leaf--title { position: absolute; inset: 0; width: auto; min-height: 0; z-index: 3; order: 0; transform-origin: 50% 0;
+    transform: translateY(calc(var(--le) * -2%)) rotateX(calc(var(--le) * 97deg)); backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+  .turn.sc-act--pinned .leaf--title.is-lifted { visibility: hidden; }
+  .turn.sc-act--pinned .thread-over path { stroke-dashoffset: calc(1 - clamp(0, calc((var(--p) - (.54 + var(--k) * .045)) / .08), 1)); }
+  .turn.sc-act--pinned .turn__lead, .turn.sc-act--pinned .turn__cap { position: absolute; z-index: 4; left: var(--gut); right: var(--gut); max-width: none;
+    top: calc(var(--bar) + 1.1rem + var(--leaf-h) + 2.6rem); }
+  .turn.sc-act--pinned .turn__lead { font-size: 1.12rem; }
+  .turn.sc-act--pinned .turn__cap h2 { font-size: 1.6rem; margin-bottom: .45rem; }
+  .turn.sc-act--pinned .turn__cap p { font-size: .94rem; line-height: 1.5; }
+}
+@media (prefers-reduced-motion: no-preference) and (min-width: 860px) {
+  .turn.sc-act--pinned { --leaf-h: min(82svh, 46rem); }
+  .turn.sc-act--pinned .turn__stack { left: auto; right: calc(var(--gut) + 3%); top: 50%; margin-left: 0; margin-top: calc(var(--leaf-h) / -2 + 1.2rem); }
+  .turn.sc-act--pinned .turn__lead, .turn.sc-act--pinned .turn__cap { right: auto; width: 28rem; top: calc(50% - 6rem); }
+  .turn.sc-act--pinned .turn__lead { font-size: 1.5rem; }
+  .turn.sc-act--pinned .turn__cap h2 { font-size: 2.5rem; margin-bottom: .8rem; }
+  .turn.sc-act--pinned .turn__cap p { font-size: 1.02rem; }
+  .turn.sc-act--pinned .turn__ghost { display: block; position: absolute; z-index: 0; left: var(--gut); bottom: 2.2rem; font-family: var(--serif); font-style: italic;
+    font-size: clamp(4.5rem, 9vw, 8.5rem); line-height: 1; color: rgba(244, 249, 246, .1); white-space: nowrap; pointer-events: none; }
+}
+
+/* ============================================== chapters on light ground */
+.chap { padding-block: clamp(3.5rem, 8vw, 7rem); background: var(--mist); }
+.chap__head { max-width: 40rem; margin-bottom: 2.2rem; }
+.chap__head p { margin-top: .9rem; color: var(--ink-soft); max-width: 46ch; }
+.verse-grid { display: grid; gap: 2.4rem; grid-template-columns: 1fr; align-items: start; }
+.verse-grid__text { order: 1; } .verse-grid__print { order: 2; }
+@media (min-width: 860px) {
+  .verse-grid { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(2rem, 5vw, 4.5rem); }
+  .verse-grid__print { order: 1; } .verse-grid__text { order: 2; }
+}
+.detail { position: relative; overflow: hidden; background: var(--leaf); aspect-ratio: var(--crop-ar, 2.6); box-shadow: 0 2px 5px rgba(4, 14, 18, .22), 0 18px 36px -20px rgba(4, 14, 18, .55); }
+.detail img { position: absolute; max-width: none; }
+.cap { margin-top: .8rem; font-size: .9rem; line-height: 1.45; color: var(--ink-soft); max-width: 44ch; }
+
+/* the invitation: one line of running text */
+.read { background: var(--mist); padding-block: clamp(4rem, 9vw, 8rem); }
+.read p.line { font-family: var(--serif); font-size: clamp(1.9rem, 1.2rem + 3vw, 3.4rem); line-height: 1.12; max-width: 30ch; text-wrap: balance; }
+.read p.line a { color: var(--ink); text-decoration-color: var(--thread-lt); text-decoration-thickness: 3px; text-underline-offset: .18em; }
+.read p.line a:hover { text-decoration-thickness: 5px; }
+.read .sub { margin-top: 1.6rem; max-width: 48ch; color: var(--ink-soft); }
+
+/* ========================================================= act 3: pile */
+.pile { background: var(--desk); color: var(--on-desk); --focus: var(--thread); position: relative; }
+.pile__stage { padding: calc(3.5rem) var(--gut) 4rem; }
+.pile__side { max-width: 38rem; }
+.pile__intro h2 { max-width: 16ch; }
+.pile__intro p { margin-top: .9rem; max-width: 36ch; color: var(--on-desk-soft); }
+.pile__sheets { margin-top: 2rem; display: grid; gap: 1.4rem; max-width: 38rem; }
+.pile__sheet { padding: 1.25rem 1.4rem 1.4rem; color: var(--ink); }
+.pile__sheet h3 { font-size: clamp(1.3rem, 1.05rem + 1.1vw, 1.75rem); letter-spacing: -.005em; }
+.pile__sheet .work { margin-top: .35rem; font-size: .9rem; line-height: 1.4; color: var(--ink-soft); }
+.pile__sheet .st { margin-top: .55rem; }
+.pile__sheet .excerpt { margin-top: .9rem; font-size: 1.12rem; line-height: 1.85; }
+.pile__more { margin-top: 1.4rem; font-weight: 600; }
+.pile__more a { color: var(--on-desk); text-decoration-thickness: 2px; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .pile.sc-act--pinned { --p: var(--sc-p, 0); --pw: min(100%, 34rem); --sh: 13rem; --step: 6.9rem; }
+  .pile.sc-act--pinned .pile__stage { padding: 0; }
+  .pile.sc-act--pinned .pile__side { display: contents; }
+  .pile.sc-act--pinned .pile__intro { position: absolute; left: var(--gut); right: var(--gut); top: calc(var(--bar) + 1rem); z-index: 5; }
+  .pile.sc-act--pinned .pile__intro h2 { font-size: 1.75rem; max-width: none; }
+  .pile.sc-act--pinned .pile__intro p { display: none; }
+  .pile.sc-act--pinned .pile__sheets { position: absolute; left: var(--gut); right: var(--gut); top: calc(var(--bar) + 1rem + 5.5rem); margin: 0; display: block; max-width: none;
+    height: calc(var(--sh) + 2 * var(--step)); }
+  .pile.sc-act--pinned .pile__sheet { --in: clamp(0, calc((var(--p) - var(--s)) / .17), 1); --e: calc(var(--in) * var(--in) * (3 - 2 * var(--in)));
+    position: absolute; left: 0; width: var(--pw); height: var(--sh); overflow: hidden; padding: 1rem 1.15rem;
+    top: calc((var(--n) - 1) * var(--step)); transform: translateY(calc((1 - var(--e)) * 112vh)); will-change: transform;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .8), 0 -6px 18px -6px rgba(4, 14, 18, .55), 0 22px 44px -18px rgba(4, 14, 18, .7); }
+  .pile.sc-act--pinned .pile__sheet h3 { font-size: 1.28rem; }
+  .pile.sc-act--pinned .pile__sheet .work { font-size: .84rem; margin-top: .25rem; }
+  .pile.sc-act--pinned .pile__sheet .st { margin-top: .4rem; }
+  .pile.sc-act--pinned .pile__sheet .excerpt { font-size: 1.02rem; line-height: 1.8; margin-top: .7rem; }
+  .pile.sc-act--pinned .pile__more { position: absolute; left: var(--gut); right: var(--gut); z-index: 6; margin: 0;
+    top: calc(var(--bar) + 1rem + 5.5rem + var(--sh) + 2 * var(--step) + 1.1rem); }
+}
+@media (prefers-reduced-motion: no-preference) and (min-width: 860px) {
+  .pile.sc-act--pinned { --pw: 34rem; --sh: 12.4rem; --step: 10.3rem; }
+  .pile.sc-act--pinned .pile__side { display: block; position: absolute; left: var(--gut); top: 50%; width: 24rem; transform: translateY(-50%); z-index: 5; }
+  .pile.sc-act--pinned .pile__intro { position: static; }
+  .pile.sc-act--pinned .pile__intro h2 { font-size: 2.9rem; }
+  .pile.sc-act--pinned .pile__intro p { display: block; font-size: 1.05rem; margin-top: 1rem; }
+  .pile.sc-act--pinned .pile__more { position: static; margin-top: 1.4rem; }
+  .pile.sc-act--pinned .pile__sheets { left: auto; right: calc(var(--gut) + 3%); width: var(--pw); top: 50%; margin-top: calc((var(--sh) + 2 * var(--step)) / -2); }
+  .pile.sc-act--pinned .pile__sheet { padding: 1.2rem 1.5rem; }
+  .pile.sc-act--pinned .pile__sheet h3 { font-size: 1.7rem; }
+  .pile.sc-act--pinned .pile__sheet .work { font-size: .92rem; }
+  .pile.sc-act--pinned .pile__sheet .excerpt { font-size: 1.15rem; }
+}
+
+/* reduced motion: every pinned act becomes an ordinary block, every cue is readable */
+@media (prefers-reduced-motion: reduce) {
+  [data-sc-cue] { opacity: 1 !important; transform: none !important; pointer-events: auto !important; }
+  .sc-act--pinned { height: auto !important; }
+  .sc-stage { position: static !important; height: auto !important; overflow: visible !important; }
+  [data-sc-parallax], [data-sc-pan] { transform: none !important; }
+  [data-sc-reveal] { clip-path: none !important; }
+}
+
+/* books */
+.books { margin-top: 2.6rem; display: grid; gap: 0; }
+.book { display: grid; gap: 1rem 2.5rem; grid-template-columns: 1fr; padding-block: 1.7rem; border-top: 1px solid var(--rule); }
+.book:last-child { border-bottom: 1px solid var(--rule); }
+@media (min-width: 760px) { .book { grid-template-columns: minmax(13rem, 1fr) 2fr; } }
+.book h3 { font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.1rem); }
+.book__state { margin-top: .5rem; font-size: .92rem; color: var(--ink-soft); }
+.book__state strong { color: var(--ink); }
+.book__open { display: inline-block; margin-top: .7rem; font-weight: 600; }
+.behind { display: grid; gap: .45rem; }
+.behind li { line-height: 1.45; }
+.behind em { font-family: var(--serif); font-size: 1.08em; }

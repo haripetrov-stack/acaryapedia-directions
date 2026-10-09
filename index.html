@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Acaryapedia Directions</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:wght@500;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap">
+<style>
+/* Layout: a working board. Nine directions as wide panels with their screens, a pick bar that follows the reader, the team's choices underneath. */
+:root {
+  --bg: #ECEFEC; --surface: #FFFFFF; --ink: #1D2421; --muted: #56615C; --line: #C9D1CC;
+  --accent: #1F5F6B; --accent-ink: #FFFFFF; --mark: #E0A42A; --mark-ink: #2A1E05; --soft: #DDE5E1;
+  --display: "Alegreya", Georgia, "Times New Roman", serif;
+  --text: "Alegreya Sans", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #141A1A; --surface: #1C2424; --ink: #E5EBE8; --muted: #9DA9A4; --line: #34413F;
+  --accent: #7FC3CD; --accent-ink: #0E2124; --mark: #E6B44C; --mark-ink: #241900; --soft: #243131; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #141A1A; --surface: #1C2424; --ink: #E5EBE8; --muted: #9DA9A4; --line: #34413F;
+  --accent: #7FC3CD; --accent-ink: #0E2124; --mark: #E6B44C; --mark-ink: #241900; --soft: #243131; color-scheme: dark }
+body { background: var(--bg); color: var(--ink); font: 400 17px/1.55 var(--text); }
+.wrap { max-width: 1180px; margin: 0 auto; padding-inline: 20px; padding-block: 28px 72px; display: grid; gap: 40px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 700; line-height: 1.15; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(2rem, 5vw, 3.1rem); }
+h2 { font-size: 1.55rem; }
+h3 { font-size: 1.2rem; }
+p { margin: 0; }
+a { color: var(--accent); }
+:focus-visible { outline: 3px solid var(--mark); outline-offset: 2px; }
+.intro { display: grid; gap: 14px; }
+.intro > p { max-width: 70ch; }
+.intro .lead { font-size: 1.12rem; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; margin-top: 6px; }
+.facts div { background: var(--soft); padding: 12px 14px; border-radius: 6px; }
+.facts b { display: block; font-family: var(--display); font-size: 1.05rem; }
+.board { display: grid; gap: 28px; }
+.dir { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 20px; display: grid; gap: 16px; }
+.dir.ref { background: transparent; border-style: dashed; }
+.dir-head { display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; align-items: baseline; }
+.num { font-family: var(--display); font-size: 2.4rem; line-height: 1; color: var(--muted); grid-row: span 4; min-width: 1.4ch; }
+.dir-head .for { color: var(--muted); }
+.shots { display: grid; grid-template-columns: 1fr 1fr 0.42fr; gap: 12px; align-items: start; }
+.shots figure { margin: 0; display: grid; gap: 6px; min-width: 0; }
+.shots a, .shots span.frame { display: block; border: 1px solid var(--line); border-radius: 4px; overflow: hidden; background: var(--bg); }
+.shots img { display: block; width: 100%; height: auto; }
+.shots figcaption { font-size: 0.85rem; color: var(--muted); }
+.story { margin: 0; display: grid; gap: 6px; }
+.story a { display: block; border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+.story img { display: block; width: 100%; height: auto; }
+.story figcaption { font-size: 0.85rem; color: var(--muted); }
+.dir-foot { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; justify-content: space-between; }
+.opens { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+.pick { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.pick span { color: var(--muted); font-size: 0.95rem; }
+button { font: 500 0.95rem/1 var(--text); cursor: pointer; border-radius: 6px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); padding: 9px 13px; }
+button[aria-pressed="true"] { background: var(--mark); color: var(--mark-ink); border-color: var(--mark); }
+button.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+button:disabled { opacity: 0.55; cursor: default; }
+.points { font-variant-numeric: tabular-nums; color: var(--muted); font-size: 0.95rem; }
+.choice { position: sticky; bottom: 0; z-index: 5; background: var(--surface); border: 1px solid var(--line); border-radius: 8px 8px 0 0;
+  padding: 10px 14px calc(10px + env(safe-area-inset-bottom, 0px)); display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; justify-content: space-between;
+  box-shadow: 0 -6px 18px rgba(0,0,0,0.08); }
+.to-save { font-weight: 500; white-space: nowrap; }
+.save-panel { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 20px; display: grid; gap: 14px; }
+.save-fields { display: grid; gap: 8px; }
+.choice-row { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; }
+.slot { display: inline-flex; gap: 6px; align-items: baseline; padding: 6px 10px; border-radius: 6px; background: var(--soft); min-width: 0; }
+.choice .slot { padding: 4px 8px; font-size: 0.92rem; }
+@media (max-width: 560px) { .choice .label-full { display: none; } .choice .slot .slot-name { display: none; } }
+.slot b { font-family: var(--display); }
+.slot.empty { color: var(--muted); }
+textarea { width: 100%; box-sizing: border-box; min-height: 70px; font: 400 1rem/1.45 var(--text); color: var(--ink); background: var(--bg);
+  border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; resize: vertical; }
+label { font-weight: 500; }
+.status { color: var(--muted); font-size: 0.95rem; }
+.fallback { display: grid; gap: 8px; }
+.fallback pre { white-space: pre-wrap; margin: 0; background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 10px; font: 400 0.95rem/1.45 var(--text); }
+.team { display: grid; gap: 14px; }
+.team table { border-collapse: collapse; width: 100%; font-size: 0.98rem; }
+.team th, .team td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.team th { font-weight: 500; color: var(--muted); }
+.table-scroll { overflow-x: auto; }
+.notes { display: grid; gap: 10px; max-width: 75ch; color: var(--ink); }
+.notes ul { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }
+@media (max-width: 760px) {
+  .shots { grid-template-columns: 1fr 0.55fr; }
+  .shots figure.desk-home { grid-column: 1 / -1; }
+  .num { font-size: 1.9rem; }
+}
+@media (prefers-reduced-motion: no-preference) { button { transition: background-color .15s, color .15s; } }
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <header class="intro">
+    <h1>Eight ways to read Acaryapedia</h1>
+    <p class="lead">Each direction is a different way into the library, with its own look. All eight show the same real text, Upadeśāmṛta, text 1, by Śrīla Rūpa Gosvāmī, so the comparison is fair. Today's working version is the ninth panel, for reference.</p>
+    <p>Open the pages, then pick your first, second and third choice and add a note. Pitambara and Mahendra Prabhu choose three finalists; the direction is then decided together with Visnu Murti Prabhu and Kasya Prabhu.</p>
+    <div class="facts">
+      <div><b>Round 1 of 2</b>Home page and verse page, on a phone and on a computer.</div>
+      <div><b>Round 2</b>The three finalists get five screens: home, author, work, verse and search.</div>
+      <div><b>Shared with Vanipedia</b>Every direction carries one sign of the Vanipedia family: one house, different rooms.</div>
+    </div>
+  </header>
+
+  <section class="board" id="board" aria-label="The directions"></section>
+
+  <section class="choice" id="choice" aria-label="Your choice">
+    <div class="choice-row" id="slots"></div>
+    <a class="to-save" href="#save-panel">Note and copy</a>
+  </section>
+
+  <section class="save-panel" id="save-panel" aria-labelledby="save-h">
+    <h2 id="save-h">Your choice</h2>
+    <div class="choice-row" id="slots-full"></div>
+    <div class="save-fields">
+      <label for="note">Your note (what you like, what you would change)</label>
+      <textarea id="note" placeholder="For example: the reading of 7 with the entry from 4"></textarea>
+      <div class="choice-row">
+        
+        <span class="status" id="status" role="status"></span>
+      </div>
+      <div class="fallback" id="fallback">
+        <p>Copy your choice and send it to Pitambara:</p>
+        <pre id="fallback-text"></pre>
+        <div><button type="button" id="copy">Copy my choice</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="notes" aria-labelledby="notes-h">
+    <h2 id="notes-h">About these prototypes</h2>
+    <ul>
+      <li>They use only the free layers: the Sanskrit and Bengali originals, the IAST transliteration and the Bengali commentaries of the 1942 Gauḍīya Maṭha edition. Śrīla Prabhupāda's translation and purport appear only as a link to Vanisource until there is permission from the BBT. English commentaries still waiting for permission are shown as marked placeholders.</li>
+      <li>Every page was checked on a phone width of 375 pixels and a computer width of 1280: nothing runs off the screen, every verse page stays under 300 KB, and the text and layers can be read without JavaScript.</li>
+      <li>They were checked in Chromium only, not yet in Safari, Firefox or on a real phone.</li>
+      <li>Links to other authors and works lead nowhere yet. Some details are proposals that need the editorial team, for example the order of the stations in direction 5 and the lessons that come after Upadeśāmṛta in direction 8.</li>
+    </ul>
+  </section>
+</div>
+
+<script>
+const DIRS = [
+  { id: "d1-izdanie", n: "1", name: "The Edition and its Sources", how: "Reads like a critical edition: the verse beside the 1942 print, the source and checking status on every layer, and a way to suggest a correction.", who: "Translators, editors, scholars" },
+  { id: "d2-masa", n: "2", name: "The Study Desk", how: "Original, translations and commentaries in three columns, with a Connections panel for every verse.", who: "Editors, translators, teachers" },
+  { id: "d3-sestra", n: "3", name: "Vanipedia's Sister", how: "The closest to Vanipedia's own look, made lighter and faster.", who: "Readers of Vanipedia" },
+  { id: "d4-ot-prabhupada", n: "4", name: "Behind Prabhupada's Words", how: "Starts from Śrīla Prabhupāda's book and, as you scroll, lifts the layers back to Rūpa Gosvāmī's verse and the commentators.", who: "Devotees in ISKCON", story: "The scroll story: the title page of The Nectar of Instruction lifts and the 1942 print of Rūpa Gosvāmī's verse lies beneath it" },
+  { id: "d5-rodoslovie", n: "5", name: "The Line", how: "The succession drawn as one line as you scroll; the authors are stations and their works hang beneath them.", who: "Students and new readers", story: "The end of the scroll: the whole line with every work counted. The order of the stations is a draft for the editorial team" },
+  { id: "d6-tarsachka", n: "6", name: "Ask the Library", how: "One search box; every result carries its exact reference and shows the match in IAST, Devanāgarī and Bengali script at once.", who: "Practitioners, and people arriving from a search engine or an AI assistant" },
+  { id: "d7-chetene", n: "7", name: "One Verse at a Time", how: "Made for the phone first: one verse fills the screen and the layers open as sheets from below, with a verse of the day.", who: "Daily readers" },
+  { id: "d8-ucheben-pat", n: "8", name: "The Study Path", how: "The book as eleven lessons, each with its key terms, questions for reflection and Śrīla Prabhupāda's lectures on the verse.", who: "Teachers and study groups" },
+];
+const REF = { id: "d9-sega", n: "", name: "Today's working version", how: "The version Mahendra Prabhu already knows, with Śrīla Prabhupāda's translation hidden for this comparison.", who: "For reference, not for voting" };
+const byId = Object.fromEntries(DIRS.map(d => [d.id, d]));
+const RANKS = ["First", "Second", "Third"];
+const POINTS = [3, 2, 1];
+
+let picks = [null, null, null];
+let note = "";
+let votes = [];
+let me = null, db = null, users = null, readOnly = false;
+
+try { const s = JSON.parse(localStorage.getItem("draft") || "null"); if (s) { picks = s.picks || picks; note = s.note || ""; } } catch (e) {}
+const saveDraft = () => { try { localStorage.setItem("draft", JSON.stringify({ picks, note })); } catch (e) {} };
+
+function el(tag, attrs = {}, ...kids) {
+  const e = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) { if (k === "text") e.textContent = v; else e.setAttribute(k, v); }
+  for (const k of kids) if (k) e.append(k);
+  return e;
+}
+function shot(d, page, w, cls, label) {
+  const img = el("img", { src: `thumbs/${d.id}-${page}-${w}.jpg`, alt: `${d.name}: ${label}`, loading: "lazy", width: w === "1280" ? "760" : "300" });
+  const frame = d.id === REF.id ? el("span", { class: "frame" }, img) : el("a", { href: `round1/${d.id}/${page}.html` }, img);
+  return el("figure", { class: cls }, frame, el("figcaption", { text: label }));
+}
+function panel(d, isRef) {
+  const art = el("article", { class: "dir" + (isRef ? " ref" : ""), id: d.id });
+  art.append(el("div", { class: "dir-head" },
+    el("span", { class: "num", "aria-hidden": "true", text: d.n }),
+    el("h2", { text: d.name }),
+    el("p", { text: d.how }),
+    el("p", { class: "for", text: d.who })));
+  art.append(el("div", { class: "shots" },
+    shot(d, "index", "1280", "desk-home", "Home page on a computer"),
+    shot(d, "verse", "1280", "desk-verse", "Verse page on a computer"),
+    shot(d, "verse", "375", "phone", "Verse page on a phone")));
+  if (d.story) {
+    const img = el("img", { src: `thumbs/${d.id}-story.jpg`, alt: `${d.name}: ${d.story}`, loading: "lazy", width: "1100" });
+    art.append(el("figure", { class: "story" }, el("a", { href: `round1/${d.id}/index.html` }, img), el("figcaption", { text: d.story })));
+  }
+  if (!isRef) {
+    const pick = el("div", { class: "pick", role: "group", "aria-label": `Rank ${d.name}` }, el("span", { text: "My choice:" }));
+    RANKS.forEach((r, i) => {
+      const b = el("button", { type: "button", "data-dir": d.id, "data-rank": String(i), "aria-pressed": "false", text: r });
+      b.addEventListener("click", () => setPick(d.id, i));
+      pick.append(b);
+    });
+    art.append(el("div", { class: "dir-foot" },
+      el("div", { class: "opens" },
+        el("a", { href: `round1/${d.id}/index.html`, text: "Open the home page" }),
+        el("a", { href: `round1/${d.id}/verse.html`, text: "Open the verse page" })),
+      pick,
+      el("span", { class: "points", id: `pts-${d.id}` })));
+  }
+  return art;
+}
+function setPick(id, rank) {
+  if (picks[rank] === id) picks[rank] = null;
+  else { picks = picks.map(p => (p === id ? null : p)); picks[rank] = id; }
+  saveDraft(); renderPicks();
+}
+function choiceText() {
+  const lines = RANKS.map((r, i) => `${r}: ${picks[i] ? byId[picks[i]].n + ". " + byId[picks[i]].name : "(none)"}`);
+  return `My choice for Acaryapedia\n${lines.join("\n")}${note.trim() ? "\nNote: " + note.trim() : ""}`;
+}
+function renderPicks() {
+  document.querySelectorAll(".pick button").forEach(b => {
+    b.setAttribute("aria-pressed", String(picks[+b.dataset.rank] === b.dataset.dir));
+  });
+  const slotList = () => RANKS.map((r, i) => {
+    const d = picks[i] && byId[picks[i]];
+    return el("span", { class: "slot" + (d ? "" : " empty") }, el("b", { text: r }),
+      el("span", { text: d ? d.n : "none" }), d ? el("span", { class: "slot-name", text: d.name }) : null);
+  });
+  document.getElementById("slots").replaceChildren(el("b", { class: "label-full", text: "Your top three:" }), ...slotList());
+  document.getElementById("slots-full").replaceChildren(...slotList());
+  document.getElementById("fallback-text").textContent = choiceText();
+}
+
+async function renderVotes() {
+  const tally = Object.fromEntries(DIRS.map(d => [d.id, 0]));
+  votes.forEach(v => (v.picks || []).forEach((p, i) => { if (tally[p] !== undefined && i < 3) tally[p] += POINTS[i]; }));
+  DIRS.forEach(d => { const s = document.getElementById(`pts-${d.id}`); if (s) s.textContent = votes.length ? `${tally[d.id]} points` : ""; });
+  const table = document.getElementById("team-table"), body = table.querySelector("tbody");
+  document.getElementById("team-empty").hidden = votes.length > 0;
+  table.hidden = votes.length === 0;
+  const profiles = users && votes.length ? await users.profiles(votes.map(v => v.id)) : {};
+  body.replaceChildren(...votes.map(v => {
+    const who = (profiles[v.id] && profiles[v.id].name) || (v.id === me ? "You" : "Someone");
+    const cell = i => { const p = (v.picks || [])[i]; return el("td", { text: p && byId[p] ? `${byId[p].n}. ${byId[p].name}` : "" }); };
+    return el("tr", {}, el("td", { text: who }), cell(0), cell(1), cell(2), el("td", { text: typeof v.note === "string" ? v.note : "" }));
+  }));
+}
+
+function showReadOnly(msg) {
+  readOnly = true;
+  document.getElementById("save").disabled = true;
+  document.getElementById("status").textContent = msg;
+  document.getElementById("fallback").hidden = false;
+}
+
+async function save() {
+  if (!db || !me) { showReadOnly("Saving is not available here."); return; }
+  const btn = document.getElementById("save");
+  btn.disabled = true;
+  document.getElementById("status").textContent = "Saving…";
+  try {
+    await db.doc("votes/" + me).set({ picks: picks.slice(0, 3), note: note.trim().slice(0, 2000), updatedAt: new Date().toISOString() });
+    document.getElementById("status").textContent = "Saved. You can change it any time.";
+    btn.disabled = false;
+  } catch (e) {
+    if (e && (e.code === "invalid_argument" || e.code === "not_granted" || e.code === "revoked")) showReadOnly("Your account can view this page but cannot save here.");
+    else { document.getElementById("status").textContent = "Not saved. Try again in a moment."; btn.disabled = false; }
+  }
+}
+
+document.getElementById("board").append(...DIRS.map(d => panel(d, false)), panel(REF, true));
+const noteBox = document.getElementById("note");
+noteBox.value = note;
+let noteTimer;
+noteBox.addEventListener("input", () => { note = noteBox.value; clearTimeout(noteTimer); noteTimer = setTimeout(() => { saveDraft(); renderPicks(); }, 400); });
+
+document.getElementById("copy").addEventListener("click", async () => {
+  const t = choiceText();
+  try { await navigator.clipboard.writeText(t); document.getElementById("status").textContent = "Copied."; }
+  catch (e) { const r = document.createRange(); r.selectNodeContents(document.getElementById("fallback-text")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+});
+renderPicks();
+
+(async () => {
+  const use = window.claude && window.claude.use ? n => window.claude.use(n) : async () => null;
+  [db, users] = await Promise.all([use("db"), use("user")]);
+  me = users ? await users.id() : null;
+  if (!db || !me) { return; }
+  const canWrite = await users.can("data.write");
+  if (canWrite === false) showReadOnly("Your account can view this page but cannot save here.");
+  let first = true;
+  db.collection("votes").onSnapshot(snap => {
+    votes = snap.docs.filter(d => d.exists).map(d => ({ id: d.id, ...d.data() }));
+    if (first) {
+      first = false;
+      const mine = votes.find(v => v.id === me);
+      if (mine && !picks.some(Boolean)) { picks = (mine.picks || [null, null, null]).concat([null, null, null]).slice(0, 3); note = mine.note || ""; noteBox.value = note; renderPicks(); }
+    }
+    renderVotes();
+  }, () => { document.getElementById("status").textContent = "The team's choices could not be loaded."; });
+})();
+</script>
+
+</body>
+</html>
