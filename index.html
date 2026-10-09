@@ -98,7 +98,7 @@ label { font-weight: 500; }
 <div class="wrap">
   <header class="intro">
     <h1>Eight ways to read Acaryapedia</h1>
-    <p class="lead">Each direction is a different way into the library, with its own look. All eight show the same real text, Upadeśāmṛta, text 1, by Śrīla Rūpa Gosvāmī, so the comparison is fair. Variant 9 is the first prototype of 23 September 2026 (Bhakti-rasāmṛta-sindhu 1.1.11, a verse page only). Today's working version is the last panel, for reference.</p>
+    <p class="lead">Each direction is a different way into the library, with its own look. All eight show the same real text, Upadeśāmṛta, text 1, by Śrīla Rūpa Gosvāmī, so the comparison is fair. Variant 1 is the first prototype of 23 September 2026 (Bhakti-rasāmṛta-sindhu 1.1.11, a verse page only). Today's working version is the last panel, for reference.</p>
     <p>Open the pages, then pick your first, second and third choice and add a note. Pitambara and Mahendra Prabhu choose three finalists; the direction is then decided together with Visnu Murti Prabhu and Kasya Prabhu.</p>
     <div class="facts">
       <div><b>Round 1 of 2</b>Home page and verse page, on a phone and on a computer.</div>
@@ -119,7 +119,7 @@ label { font-weight: 500; }
     <div class="choice-row" id="slots-full"></div>
     <div class="save-fields">
       <label for="note">Your note (what you like, what you would change)</label>
-      <textarea id="note" placeholder="For example: the reading of 7 with the entry from 4"></textarea>
+      <textarea id="note" placeholder="For example: the reading of 8 with the entry from 5"></textarea>
       <div class="choice-row">
         
         <span class="status" id="status" role="status"></span>
@@ -138,22 +138,22 @@ label { font-weight: 500; }
       <li>They use only the free layers: the Sanskrit and Bengali originals, the IAST transliteration and the Bengali commentaries of the 1942 Gauḍīya Maṭha edition. Śrīla Prabhupāda's translation and purport appear only as a link to Vanisource until there is permission from the BBT. English commentaries still waiting for permission are shown as marked placeholders.</li>
       <li>Every page was checked on a phone width of 375 pixels and a computer width of 1280: nothing runs off the screen, every verse page stays under 300 KB, and the text and layers can be read without JavaScript.</li>
       <li>They were checked in Chromium only, not yet in Safari, Firefox or on a real phone.</li>
-      <li>Links to other authors and works lead nowhere yet. Some details are proposals that need the editorial team, for example the order of the stations in direction 5 and the lessons that come after Upadeśāmṛta in direction 8.</li>
+      <li>Links to other authors and works lead nowhere yet. Some details are proposals that need the editorial team, for example the order of the stations in direction 6 and the lessons that come after Upadeśāmṛta in direction 9.</li>
     </ul>
   </section>
 </div>
 
 <script>
 const DIRS = [
-  { id: "d1-izdanie", n: "1", name: "The Edition and its Sources", how: "Reads like a critical edition: the verse beside the 1942 print, the source and checking status on every layer, and a way to suggest a correction.", who: "Translators, editors, scholars" },
-  { id: "d2-masa", n: "2", name: "The Study Desk", how: "Original, translations and commentaries in three columns, with a Connections panel for every verse.", who: "Editors, translators, teachers" },
-  { id: "d3-sestra", n: "3", name: "Vanipedia's Sister", how: "The closest to Vanipedia's own look, made lighter and faster.", who: "Readers of Vanipedia" },
-  { id: "d4-ot-prabhupada", n: "4", name: "Behind Prabhupada's Words", how: "Starts from Śrīla Prabhupāda's book and, as you scroll, lifts the layers back to Rūpa Gosvāmī's verse and the commentators.", who: "Devotees in ISKCON", story: "The scroll story: the title page of The Nectar of Instruction lifts and the 1942 print of Rūpa Gosvāmī's verse lies beneath it" },
-  { id: "d5-rodoslovie", n: "5", name: "The Line", how: "The succession drawn as one line as you scroll; the authors are stations and their works hang beneath them.", who: "Students and new readers", story: "The end of the scroll: the whole line with every work counted. The order of the stations is a draft for the editorial team" },
-  { id: "d6-tarsachka", n: "6", name: "Ask the Library", how: "One search box; every result carries its exact reference and shows the match in IAST, Devanāgarī and Bengali script at once.", who: "Practitioners, and people arriving from a search engine or an AI assistant" },
-  { id: "d7-chetene", n: "7", name: "One Verse at a Time", how: "Made for the phone first: one verse fills the screen and the layers open as sheets from below, with a verse of the day.", who: "Daily readers" },
-  { id: "d8-ucheben-pat", n: "8", name: "The Study Path", how: "The book as eleven lessons, each with its key terms, questions for reflection and Śrīla Prabhupāda's lectures on the verse.", who: "Teachers and study groups" },
-  { id: "p1-brs-prototype", n: "9", name: "The September Prototype", how: "The verse page of 23 September 2026 for Bhakti-rasāmṛta-sindhu 1.1.11: four translations side by side, word for word, both commentaries with their Sanskrit, Śrīla Prabhupāda's explanations and every place he quotes the verse. Translations under copyright are withheld in this copy.", who: "Readers who study one verse in depth", verseOnly: true },
+  { id: "p1-brs-prototype", n: "1", name: "The September Prototype", how: "The verse page of 23 September 2026 for Bhakti-rasāmṛta-sindhu 1.1.11: four translations side by side, word for word, both commentaries with their Sanskrit, Śrīla Prabhupāda's explanations and every place he quotes the verse. Translations under copyright are withheld in this copy.", who: "Readers who study one verse in depth", verseOnly: true },
+  { id: "d1-izdanie", n: "2", name: "The Edition and its Sources", how: "Reads like a critical edition: the verse beside the 1942 print, the source and checking status on every layer, and a way to suggest a correction.", who: "Translators, editors, scholars" },
+  { id: "d2-masa", n: "3", name: "The Study Desk", how: "Original, translations and commentaries in three columns, with a Connections panel for every verse.", who: "Editors, translators, teachers" },
+  { id: "d3-sestra", n: "4", name: "Vanipedia's Sister", how: "The closest to Vanipedia's own look, made lighter and faster.", who: "Readers of Vanipedia" },
+  { id: "d4-ot-prabhupada", n: "5", name: "Behind Prabhupada's Words", how: "Starts from Śrīla Prabhupāda's book and, as you scroll, lifts the layers back to Rūpa Gosvāmī's verse and the commentators.", who: "Devotees in ISKCON", story: "The scroll story: the title page of The Nectar of Instruction lifts and the 1942 print of Rūpa Gosvāmī's verse lies beneath it" },
+  { id: "d5-rodoslovie", n: "6", name: "The Line", how: "The succession drawn as one line as you scroll; the authors are stations and their works hang beneath them.", who: "Students and new readers", story: "The end of the scroll: the whole line with every work counted. The order of the stations is a draft for the editorial team" },
+  { id: "d6-tarsachka", n: "7", name: "Ask the Library", how: "One search box; every result carries its exact reference and shows the match in IAST, Devanāgarī and Bengali script at once.", who: "Practitioners, and people arriving from a search engine or an AI assistant" },
+  { id: "d7-chetene", n: "8", name: "One Verse at a Time", how: "Made for the phone first: one verse fills the screen and the layers open as sheets from below, with a verse of the day.", who: "Daily readers" },
+  { id: "d8-ucheben-pat", n: "9", name: "The Study Path", how: "The book as eleven lessons, each with its key terms, questions for reflection and Śrīla Prabhupāda's lectures on the verse.", who: "Teachers and study groups" },
 ];
 const REF = { id: "d9-sega", n: "", name: "Today's working version", how: "The version Mahendra Prabhu already knows, with Śrīla Prabhupāda's translation hidden for this comparison.", who: "For reference, not for voting" };
 const byId = Object.fromEntries(DIRS.map(d => [d.id, d]));
