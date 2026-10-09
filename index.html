@@ -98,7 +98,7 @@ label { font-weight: 500; }
 <div class="wrap">
   <header class="intro">
     <h1>Eight ways to read Acaryapedia</h1>
-    <p class="lead">Each direction is a different way into the library, with its own look. All eight show the same real text, Upadeśāmṛta, text 1, by Śrīla Rūpa Gosvāmī, so the comparison is fair. Today's working version is the ninth panel, for reference.</p>
+    <p class="lead">Each direction is a different way into the library, with its own look. All eight show the same real text, Upadeśāmṛta, text 1, by Śrīla Rūpa Gosvāmī, so the comparison is fair. Variant 9 is the first prototype of 23 September 2026 (Bhakti-rasāmṛta-sindhu 1.1.11, a verse page only). Today's working version is the last panel, for reference.</p>
     <p>Open the pages, then pick your first, second and third choice and add a note. Pitambara and Mahendra Prabhu choose three finalists; the direction is then decided together with Visnu Murti Prabhu and Kasya Prabhu.</p>
     <div class="facts">
       <div><b>Round 1 of 2</b>Home page and verse page, on a phone and on a computer.</div>
@@ -153,6 +153,7 @@ const DIRS = [
   { id: "d6-tarsachka", n: "6", name: "Ask the Library", how: "One search box; every result carries its exact reference and shows the match in IAST, Devanāgarī and Bengali script at once.", who: "Practitioners, and people arriving from a search engine or an AI assistant" },
   { id: "d7-chetene", n: "7", name: "One Verse at a Time", how: "Made for the phone first: one verse fills the screen and the layers open as sheets from below, with a verse of the day.", who: "Daily readers" },
   { id: "d8-ucheben-pat", n: "8", name: "The Study Path", how: "The book as eleven lessons, each with its key terms, questions for reflection and Śrīla Prabhupāda's lectures on the verse.", who: "Teachers and study groups" },
+  { id: "p1-brs-prototype", n: "9", name: "The September Prototype", how: "The verse page of 23 September 2026 for Bhakti-rasāmṛta-sindhu 1.1.11: four translations side by side, word for word, both commentaries with their Sanskrit, Śrīla Prabhupāda's explanations and every place he quotes the verse. Translations under copyright are withheld in this copy.", who: "Readers who study one verse in depth", verseOnly: true },
 ];
 const REF = { id: "d9-sega", n: "", name: "Today's working version", how: "The version Mahendra Prabhu already knows, with Śrīla Prabhupāda's translation hidden for this comparison.", who: "For reference, not for voting" };
 const byId = Object.fromEntries(DIRS.map(d => [d.id, d]));
@@ -186,7 +187,7 @@ function panel(d, isRef) {
     el("p", { text: d.how }),
     el("p", { class: "for", text: d.who })));
   art.append(el("div", { class: "shots" },
-    shot(d, "index", "1280", "desk-home", "Home page on a computer"),
+    ...(d.verseOnly ? [] : [shot(d, "index", "1280", "desk-home", "Home page on a computer")]),
     shot(d, "verse", "1280", "desk-verse", "Verse page on a computer"),
     shot(d, "verse", "375", "phone", "Verse page on a phone")));
   if (d.story) {
@@ -202,7 +203,7 @@ function panel(d, isRef) {
     });
     art.append(el("div", { class: "dir-foot" },
       el("div", { class: "opens" },
-        el("a", { href: `round1/${d.id}/index.html`, text: "Open the home page" }),
+        ...(d.verseOnly ? [] : [el("a", { href: `round1/${d.id}/index.html`, text: "Open the home page" })]),
         el("a", { href: `round1/${d.id}/verse.html`, text: "Open the verse page" })),
       pick,
       el("span", { class: "points", id: `pts-${d.id}` })));

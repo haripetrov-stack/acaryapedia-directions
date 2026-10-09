@@ -4,7 +4,7 @@ Prototypes for choosing the look and the reading model of Acaryapedia. Round 1 o
 
 **Open the comparison page:** https://haripetrov-stack.github.io/acaryapedia-directions/
 
-Every direction shows the same real text, Upadeśāmṛta, text 1, by Śrīla Rūpa Gosvāmī: a home page and a verse page, on a phone and on a computer. Open the pages, pick a first, second and third choice, add a note, and send it to Pitambara (the page has a button that copies your choice). Pitambara and Mahendra Prabhu choose three finalists; the direction is then decided together with Visnu Murti Prabhu and Kasya Prabhu.
+Every direction shows the same real text, Upadeśāmṛta, text 1, by Śrīla Rūpa Gosvāmī: a home page and a verse page, on a phone and on a computer. Variant 9 is the first prototype of 23 September 2026, a verse page for Bhakti-rasāmṛta-sindhu 1.1.11, with every translation under copyright withheld. Open the pages, pick a first, second and third choice, add a note, and send it to Pitambara (the page has a button that copies your choice). Pitambara and Mahendra Prabhu choose three finalists; the direction is then decided together with Visnu Murti Prabhu and Kasya Prabhu.
 
 About these prototypes:
 

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>BRS 1.1.11 · Acaryapedia</title>
+<meta content="Acaryapedia prototype: Bhakti-rasāmṛta-sindhu 1.1.11 with Bhanu Swami's translation, the ācāryas' commentaries and Śrīla Prabhupāda's renderings." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400&amp;family=Noto+Serif+Bengali:wght@400;600&amp;family=Noto+Serif+Devanagari:wght@400;600&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ground:#F2F3EE; --surface:#FFFFFF; --sunk:#E9EBE4; --ink:#1C2230; --muted:#586072; --rule:#D6D9CF;
+  --accent:#34407C; --accent-soft:#E3E6F3; --ochre:#855708; --ochre-soft:#F4E9D2; --ok:#2E6A45; --ok-soft:#E0EFE4; --warn:#8A4B12; --warn-soft:#F6E4D2;
+  --serif:"Gentium Book Plus","Gentium Plus","Charis SIL","Noto Serif","Times New Roman",serif;
+  --sans:"Source Sans 3","Segoe UI","Noto Sans",system-ui,sans-serif;
+  --deva:"Noto Serif Devanagari","Nirmala UI","Mangal",serif;
+  --beng:"Noto Serif Bengali","Nirmala UI","Vrinda",serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  color-scheme:dark; --ground:#12151C; --surface:#1A1E27; --sunk:#161A22; --ink:#E7E6E0; --muted:#9BA1AE; --rule:#2D333E;
+  --accent:#AAB4F0; --accent-soft:#252B48; --ochre:#E2B35E; --ochre-soft:#382C15; --ok:#80C89B; --ok-soft:#1C3125; --warn:#EDA66A; --warn-soft:#3A2717;}}
+:root[data-theme="dark"]{
+  color-scheme:dark; --ground:#12151C; --surface:#1A1E27; --sunk:#161A22; --ink:#E7E6E0; --muted:#9BA1AE; --rule:#2D333E;
+  --accent:#AAB4F0; --accent-soft:#252B48; --ochre:#E2B35E; --ochre-soft:#382C15; --ok:#80C89B; --ok-soft:#1C3125; --warn:#EDA66A; --warn-soft:#3A2717;}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font:17px/1.62 var(--serif);margin:0}
+a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:2px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:20px;padding-block:0 64px}
+header.top{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;padding-block:18px 10px;font-family:var(--sans)}
+.mark{font:700 1.15rem/1 var(--serif);letter-spacing:.01em;color:var(--ink);text-decoration:none}
+.mark span{color:var(--ochre)}
+.pill{font:600 .72rem/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;padding:6px 9px;border-radius:999px;background:var(--ochre-soft);color:var(--ochre)}
+.crumbs{font:.86rem/1.4 var(--sans);color:var(--muted);flex-basis:100%}
+.crumbs ol{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:4px}
+.crumbs li+li::before{content:"›";margin:0 6px 0 2px;color:var(--rule)}
+.crumbs [aria-current]{color:var(--ink);font-weight:600}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:36px;align-items:start}
+@media (max-width:960px){.layout{grid-template-columns:minmax(0,1fr)}}
+main,aside{min-width:0}
+/* verse */
+.verse{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:28px 28px 24px;margin-top:8px}
+.vhead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px;font-family:var(--sans)}
+.vid{font:700 .82rem/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--ochre)}
+.vtitle{font:400 1rem/1.3 var(--sans);color:var(--muted);margin:4px 0 0}
+.seg{display:inline-flex;border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+.seg button{font:600 .82rem/1 var(--sans);background:transparent;color:var(--muted);border:0;padding:8px 12px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent-soft);color:var(--accent)}
+.seg button+button{border-left:1px solid var(--rule)}
+.orig{font-size:1.72rem;line-height:1.75;margin:0 0 6px;text-wrap:balance}
+.orig.deva{font-family:var(--deva)} .orig.beng{font-family:var(--beng)}
+.iast-verse{font:italic 1.14rem/1.7 var(--serif);color:var(--ink);margin:0}
+.orig + .iast-verse{color:var(--muted)}
+.tr-main{border-top:1px solid var(--rule);margin-top:20px;padding-top:18px}
+.tr-main p{font-size:1.2rem;line-height:1.55;margin:0 0 8px;max-width:62ch}
+.byline{font:.84rem/1.4 var(--sans);color:var(--muted)}
+/* section nav */
+nav.layers{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ground);padding-block:12px;margin-top:10px;border-bottom:1px solid var(--rule);overflow-x:auto}
+nav.layers ul{list-style:none;margin:0;padding:0;display:flex;gap:6px;white-space:nowrap;font:600 .85rem/1 var(--sans)}
+nav.layers a{display:block;padding:8px 11px;border-radius:6px;text-decoration:none;color:var(--muted)}
+nav.layers a:hover{background:var(--sunk);color:var(--ink)}
+section{padding-top:30px}
+h2{font:700 1.38rem/1.25 var(--serif);margin:0 0 4px;text-wrap:balance}
+.lede{font:.95rem/1.5 var(--sans);color:var(--muted);margin:0 0 18px;max-width:68ch}
+h3{font:700 1.08rem/1.3 var(--serif);margin:0}
+h4.lemma{font:italic 700 1.02rem/1.3 var(--serif);margin:22px 0 6px;color:var(--accent)}
+h5{font:700 .8rem/1.2 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 8px;display:flex;gap:8px;align-items:baseline}
+.prose p{max-width:66ch;margin:0 0 12px}
+.prose p.gap{color:var(--muted);letter-spacing:.3em}
+/* translations compare */
+.compare{display:grid;gap:0;border:1px solid var(--rule);border-radius:10px;background:var(--surface);overflow:hidden}
+.tr{display:grid;grid-template-columns:200px minmax(0,1fr);gap:16px;padding:16px 20px}
+.tr+.tr{border-top:1px solid var(--rule)}
+.tr .who{font:600 .88rem/1.35 var(--sans)}
+.tr .who small{display:block;font-weight:400;color:var(--muted)}
+.tr p{margin:0;max-width:62ch}
+.tr.primary{background:var(--accent-soft)}
+@media (max-width:620px){.tr{grid-template-columns:1fr;gap:6px}}
+/* synonyms */
+dl.wfw{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:8px 18px;margin:0;background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:18px 20px}
+dl.wfw dt{font:italic 700 1rem/1.45 var(--serif);color:var(--accent)}
+dl.wfw dd{margin:0}
+@media (max-width:560px){dl.wfw{grid-template-columns:1fr} dl.wfw dd{margin-bottom:6px}}
+.small{font:.88rem/1.5 var(--sans);color:var(--muted)}
+/* commentaries */
+.comm{background:var(--surface);border:1px solid var(--rule);border-radius:10px;margin-bottom:14px}
+.comm>summary{list-style:none;cursor:pointer;padding:16px 20px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:baseline}
+.comm>summary::-webkit-details-marker{display:none}
+.comm>summary::before{content:"+";font:700 1.1rem/1 var(--sans);color:var(--muted);width:14px}
+.comm[open]>summary::before{content:"–"}
+.comm .ctitle{font:italic .95rem/1.3 var(--serif);color:var(--muted)}
+.comm .body{padding:0 20px 18px 48px}
+@media (max-width:560px){.comm .body{padding-left:20px}}
+.badge{font:600 .7rem/1 var(--sans);letter-spacing:.05em;text-transform:uppercase;padding:5px 7px;border-radius:5px;white-space:nowrap}
+.comm .badge{white-space:normal;line-height:1.3}
+.b-ok{background:var(--ok-soft);color:var(--ok)} .b-warn{background:var(--warn-soft);color:var(--warn)} .b-info{background:var(--accent-soft);color:var(--accent)}
+.toggle{font:600 .82rem/1 var(--sans);border:1px solid var(--rule);background:var(--ground);color:var(--ink);padding:8px 11px;border-radius:6px;cursor:pointer;margin:6px 0 12px}
+.sktbox{background:var(--sunk);border-radius:8px;padding:14px 16px;margin:0 0 14px}
+.sktbox p.iast{font:italic .98rem/1.65 var(--serif);margin:0 0 8px;max-width:72ch}
+blockquote.cited{margin:14px 0;padding:10px 0 10px 18px;border-left:2px solid var(--ochre)}
+blockquote.cited .iast{font-style:italic;margin:0 0 6px}
+blockquote.cited p{margin:0 0 4px;max-width:62ch}
+cite{font:600 .82rem/1 var(--sans);font-style:normal;color:var(--ochre);white-space:nowrap}
+sup.fn a{font:700 .7rem/1 var(--sans);text-decoration:none;padding:0 2px}
+ol.notes{list-style:none;padding:0;margin:14px 0 0;border-top:1px solid var(--rule);padding-top:12px;font:.88rem/1.5 var(--sans);color:var(--muted)}
+ol.notes li{display:grid;grid-template-columns:26px minmax(0,1fr);margin-bottom:6px}
+ol.notes li:target{background:var(--ochre-soft);border-radius:4px}
+.fnum{font-weight:700;color:var(--ink)} .back{text-decoration:none;margin-left:4px}
+/* prabhupada */
+.pp{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:20px 22px;margin-bottom:14px}
+.pp .src{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline;margin-bottom:10px}
+.pp p{max-width:66ch;margin:0 0 12px}
+.pp .trans{font-weight:700}
+/* quoted */
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 16px}
+.stat{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:10px 14px;font-family:var(--sans)}
+.stat b{display:block;font:700 1.35rem/1.1 var(--sans);font-variant-numeric:tabular-nums}
+.stat span{font-size:.82rem;color:var(--muted)}
+.tabs{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}
+.tabs button{font:600 .84rem/1 var(--sans);padding:8px 12px;border-radius:6px;border:1px solid var(--rule);background:var(--surface);color:var(--muted);cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--accent);color:var(--surface);border-color:var(--accent)}
+.qpanel{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:16px 20px}
+.qgroup+.qgroup{margin-top:16px}
+.count{font:600 .75rem/1 var(--sans);color:var(--muted);background:var(--sunk);padding:3px 6px;border-radius:4px;font-variant-numeric:tabular-nums}
+ul.qlist{margin:0;padding:0;list-style:none;columns:2 260px;column-gap:24px;font:.9rem/1.45 var(--sans)}
+ul.qlist li{break-inside:avoid;padding:2px 0}
+details.year{border-top:1px solid var(--rule)}
+details.year:first-child{border-top:0}
+details.year summary{cursor:pointer;display:flex;justify-content:space-between;padding:9px 0;font:600 .92rem/1 var(--sans)}
+details.year ul{padding-bottom:10px}
+/* aside */
+aside{position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px);display:grid;gap:14px;margin-top:8px}
+@media (max-width:960px){aside{position:static}}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:16px 18px;font-family:var(--sans);font-size:.9rem}
+.card h3{font:700 .78rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+.facts{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 12px;margin:0}
+.facts dt{color:var(--muted)} .facts dd{margin:0}
+.facts dd i{font-family:var(--serif)}
+.status{list-style:none;padding:0;margin:0;display:grid;gap:9px}
+.status li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:start;line-height:1.35}
+.status li small{display:block;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:italic .9rem/1 var(--serif);padding:6px 9px;border-radius:999px;background:var(--sunk);color:var(--ink)}
+.cite{font:.85rem/1.45 var(--sans);background:var(--sunk);padding:10px 12px;border-radius:6px;margin:0 0 8px;overflow-wrap:anywhere}
+.flag{border-left:3px solid var(--warn);padding-left:10px}
+.pn{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:34px}
+@media (max-width:620px){.pn{grid-template-columns:1fr}}
+.pn a{display:block;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:14px 16px}
+.pn a:hover{border-color:var(--accent)}
+.pn .dir{font:700 .75rem/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--ochre)}
+.pn .iast{font-style:italic;color:var(--muted);font-size:.92rem;margin:6px 0}
+.pn p{margin:0;font-size:.95rem}
+.review{margin-top:34px;background:var(--ochre-soft);border-radius:10px;padding:18px 22px}
+.review h2{font-size:1.15rem}
+.review ol{margin:8px 0 0;padding-left:20px;max-width:70ch}
+.review li{margin-bottom:6px}
+footer{margin-top:34px;font:.82rem/1.5 var(--sans);color:var(--muted);border-top:1px solid var(--rule);padding-top:14px;max-width:80ch}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+</style>
+<meta content="noindex, nofollow" name="robots"/><style>.withheld{font-style:italic;opacity:.85} .withheld .badge{font-style:normal;margin-right:.4em}</style></head>
+<body>
+<div class="wrap">
+<header class="top">
+<a class="mark" href="#top" id="top">Ācārya<span>pedia</span></a>
+<span class="pill">Prototype for review · 23 Sep 2026</span>
+<nav aria-label="Location" class="crumbs">
+<ol><li>Rūpa Gosvāmī</li><li>Bhakti-rasāmṛta-sindhu</li><li>Pūrva-vibhāga (Eastern Division)</li><li>Laharī 1: Sāmānya-bhakti</li><li aria-current="page">1.1.11</li></ol>
+</nav>
+</header>
+<div class="layout">
+<main>
+<article aria-labelledby="vt" class="verse">
+<div class="vhead">
+<div><div class="vid">BRS 1.1.11</div><p class="vtitle" id="vt">The definition of the highest bhakti (uttama-bhakti)</p></div>
+<div aria-label="Script" class="seg" role="group">
+<button aria-pressed="true" data-script="deva" type="button">देवनागरी</button>
+<button aria-pressed="false" data-script="beng" type="button">বাংলা</button>
+<button aria-pressed="false" data-script="iast" type="button">IAST</button>
+</div>
+</div>
+<p class="orig deva" id="orig-deva" lang="sa-Deva">अन्याभिलाषिता-शून्यं<br/>ज्ञान-कर्माद्य्-अनावृतम्<br/>आनुकूल्येन कृष्णानु-<br/>शीलनं भक्तिर् उत्तमा</p>
+<p class="orig beng" hidden="" id="orig-beng" lang="sa-Beng">অন্যাভিলাষিতা-শূন্যং<br/>জ্ঞান-কর্মাদ্য্-অনাবৃতম্<br/>আনুকূল্যেন কৃষ্ণানু-<br/>শীলনং ভক্তির্ উত্তমা</p>
+<p class="iast-verse" lang="sa-Latn">anyābhilāṣitā-śūnyaṁ<br/>jñāna-karmādy-anāvṛtam<br/>ānukūlyena kṛṣṇānu-<br/>śīlanaṁ bhaktir uttamā</p>
+<div class="tr-main">
+<p class="withheld"><span class="badge b-warn">Withheld in this public copy</span> Bhanu Swami's translation. </p>
+<div class="byline">Translation by Bhanu Swami · with the commentaries of Śrīla Jīva Gosvāmī and Śrīla Viśvanātha Cakravartī</div>
+</div>
+</article>
+<nav aria-label="On this page" class="layers">
+<ul>
+<li><a href="#translations">Translations</a></li>
+<li><a href="#wfw">Word for word</a></li>
+<li><a href="#commentaries">Commentaries</a></li>
+<li><a href="#prabhupada">Śrīla Prabhupāda</a></li>
+<li><a href="#quoted">Quoted by Prabhupāda</a></li>
+<li><a href="#links">Related verses</a></li>
+</ul>
+</nav>
+<section id="translations">
+<h2>Translations</h2>
+<p class="lede">Bhanu Swami's translation is the reference rendering on this page. Three others are shown beside it for comparison.</p>
+<div class="compare">
+<div class="tr primary"><div class="who">Bhanu Swami<small>Bhakti-rasāmṛta-sindhu with the commentaries of Jīva and Viśvanātha</small></div><p class="withheld"><span class="badge b-warn">Withheld in this public copy</span> Bhanu Swami's translation. </p></div>
+<div class="tr"><div class="who">A. C. Bhaktivedanta Swami Prabhupāda<small>as quoted in Śrī Caitanya-caritāmṛta, Madhya 19.167 (BBT)</small></div><p class="withheld"><span class="badge b-warn">Withheld in this public copy</span> Śrīla Prabhupāda's translation, Śrī Caitanya-caritāmṛta, Madhya 19.167 (BBT). <a href="https://vanisource.org/wiki/CC_Madhya_19.167" rel="noopener">Read it on Vanisource</a>.</p></div>
+<div class="tr"><div class="who">A. C. Bhaktivedanta Swami Prabhupāda<small>summary in The Nectar of Devotion, Introduction (BBT)</small></div><p class="withheld"><span class="badge b-warn">Withheld in this public copy</span> Śrīla Prabhupāda's summary in The Nectar of Devotion (BBT). <a href="https://vanisource.org/wiki/The_Nectar_of_Devotion" rel="noopener">Read it on Vanisource</a>.</p></div>
+<div class="tr"><div class="who">David L. Haberman<small>The Bhaktirasāmṛtasindhu of Rūpa Gosvāmin (2003)</small></div><p class="withheld"><span class="badge b-warn">Withheld in this public copy</span> David L. Haberman's translation (2003). </p></div>
+</div>
+</section>
+<section id="wfw">
+<h2>Word for word</h2>
+<p class="lede">From Śrīla Prabhupāda's synonyms to Caitanya-caritāmṛta, Madhya 19.167, where Śrī Caitanya quotes this verse while instructing Rūpa Gosvāmī. The Bhanu Swami edition gives no word-for-word gloss.</p>
+<p class="withheld"><span class="badge b-warn">Withheld in this public copy</span> The glosses are Śrīla Prabhupāda's synonyms to Śrī Caitanya-caritāmṛta, Madhya 19.167 (BBT). <a href="https://vanisource.org/wiki/CC_Madhya_19.167" rel="noopener">Read it on Vanisource</a>.</p><dl class="wfw"><dt lang="sa-Latn">anya-abhilāṣitā-śūnyam</dt><dd>…</dd><dt lang="sa-Latn">jñāna</dt><dd>…</dd><dt lang="sa-Latn">karma</dt><dd>…</dd><dt lang="sa-Latn">ādi</dt><dd>…</dd><dt lang="sa-Latn">anāvṛtam</dt><dd>…</dd><dt lang="sa-Latn">ānukūlyena</dt><dd>…</dd><dt lang="sa-Latn">kṛṣṇa-anuśīlanam</dt><dd>…</dd><dt lang="sa-Latn">bhaktiḥ uttamā</dt><dd>…</dd></dl>
+
+</section>
+<section id="commentaries">
+<h2>Commentaries</h2>
+<p class="lede">The commentaries are listed in chronological order. Each one can show its Sanskrit original. Where no licensed English translation exists yet, the Sanskrit is shown alone and marked.</p>
+<details class="comm" open="">
+<summary><h3>Śrīla Jīva Gosvāmī</h3><span class="ctitle">Durgama-saṅgamanī</span><span class="badge b-info">English: Bhanu Swami</span></summary>
+<div class="body prose">
+<button aria-controls="skt-jiva" aria-expanded="false" class="toggle" type="button">Show Sanskrit</button>
+<div class="sktbox" hidden="" id="skt-jiva"><p class="withheld"><span class="badge b-warn">Withheld in this public copy</span> The English translation of this commentary (Bhanu Swami). </p>
+
+</div>
+<h4 class="lemma" lang="sa-Latn">Anuśīlanam</h4>
+
+
+<h4 class="lemma" lang="sa-Latn">Kṛṣṇānuśīlanam</h4>
+
+
+<h4 class="lemma" lang="sa-Latn">Ānukūlyena</h4>
+
+
+
+
+
+
+<h4 class="lemma" lang="sa-Latn">Anyābhilaṣitā-śūnyam</h4>
+
+<h4 class="lemma" lang="sa-Latn">Jñāna karmādy anāvṛtam</h4>
+
+
+
+</div>
+</details>
+<details class="comm">
+<summary><h3>Śrīla Viśvanātha Cakravartī Ṭhākura</h3><span class="ctitle">Bhakti-sāra-pradarśinī</span><span class="badge b-info">English: Bhanu Swami (where different from Jīva)</span></summary>
+<div class="body prose">
+<button aria-controls="skt-visva" aria-expanded="false" class="toggle" type="button">Show Sanskrit</button>
+<div class="sktbox" hidden="" id="skt-visva"><p class="withheld"><span class="badge b-warn">Withheld in this public copy</span> The English translation of this commentary (Bhanu Swami). </p>
+
+
+
+</div>
+
+
+
+<blockquote class="cited">
+
+</blockquote>
+
+<blockquote class="cited">
+
+</blockquote>
+
+
+
+<blockquote class="cited">
+
+</blockquote>
+
+
+</div>
+</details>
+<details class="comm">
+<summary><h3>Śrīla Mukunda dāsa Gosvāmī</h3><span class="ctitle">Artha-ratnālpa-dīpikā</span><span class="badge b-warn">English translation not yet available</span></summary>
+<div class="body"><div class="sktbox"><p class="iast" lang="sa-Latn">kṛṣṇānuśīlanaṁ kṛṣṇasya dehendriyāntaḥkaraṇair abhyāsaḥ | śīla upadhāraṇa iti caurādiko dhātuḥ | kṛṣṇa-śabdaś cātra yatra granthe yasya bhagavataḥ pratipādanaṁ tatra tasya nāma deyam iti nārāyaṇādīnām upalakṣaṇam | yasyānuśīlanaṁ tasyārthata eva prāptiḥ syād ity abhipretya bhaktir ity evoktam | na tu kṛṣṇa-bhaktir iti | tatra bhakti-mātra-siddhy-arthaṁ viśeṣaṇam ānukūlyeneti | ānukūlyaṁ kṛṣṇa-rocaka-pravṛttiḥ | tṛtīyeyaṁ viśeṣaṇe, na tūpalakṣaṇe | śāstriṇaḥ samānayetivad ānukūlyasyāpi bhaktitva-vidhānam uttamātva-siddhy-artham | taṭastha-lakṣaṇenānyetyādi-viśeṣaṇa-dvayam | jñānam ādhyātmikaṁ | karma nitya-naimittika-dāna-vratādi-smṛtyādy-uktam | ādi-padenālasyaṁ gṛhītam | lakṣaṇam idam ā-sādhanam ā-mahā-bhāvam anveti ||11||</p></div><p class="small">Sanskrit from the Haridāsa Dāsa edition (Navadvīpa, 1951), as edited by Jan Brzezinski. A translation will be commissioned or licensed before launch.</p></div>
+</details>
+<details class="comm">
+<summary><h3>Śrīla Bhaktisiddhānta Sarasvatī Ṭhākura</h3><span class="ctitle">Anubhāṣya on Caitanya-caritāmṛta, Madhya 19.167</span><span class="badge b-warn">English translation not yet available</span></summary>
+<div class="body"><div class="sktbox"><p class="iast" lang="sa-Latn">prāg asya taṭastha-lakṣaṇam āha anyābhilāṣitā-śūnyaṁ anyābhilāṣitā kṛṣṇa-bhajana-sampādana-virodhi-yoṣit-saṅgādi-rūpā durnīti-mūlā vāñchā | tayā śūnyaṁ vihīnam | jñāna-karmādy-anāvṛtaṁ jñānam atra nirbheda-brahmānusandhānaṁ, na tu bhajanīyatvānusandhānam api, tasyāvaśyāpekṣaṇīyatvāt | karma ca smṛty-ādy-uktaṁ nitya-naimittikādi, na tu bhajanīya-paricaryādi, tasya tad-anuśīlana-rūpatvāt | ādi-śabdena vairāgya-yoga-sāṅkhyābhyāsādayaḥ, tair anāvṛtam avyavahitam apratihatam | ānukūlyena ānukūlyam atra bhajanoddeśyāya śrī-kṛṣṇāya rocamānā pravṛttiḥ, prātikūlyaṁ tu tad-viparītaṁ jñeyam | tasya bhajana-virodhāt, teneti viśeṣeṇa tṛtīyā na tu upalakṣaṇataḥ ānukūlyasyāpi bhaktitva-vidhānaṁ jñeyam | kṛṣṇānuśīlanaṁ | kṛṣṇa-śabdaś cātra svayaṁ bhagavataḥ śrī-kṛṣṇasya, tad-rūpāṇāṁ cānyeṣāṁ api śrī-viṣṇu-tattvānāṁ grāhakaś ceti bodhyam | tasya kṛṣṇasya sambandhi, kṛṣṇārthaṁ vā anuśīlanaṁ kāya-vāṅ-mānasīyat-tac-ceṣṭā-rūpaṁ prīti-viṣayātmakaṁ śaithilya-parityāga-pūrvakaṁ muhur eva tat-tat-karma-pravartanam eva uttamā bhaktiḥ | anena vaidha-rāgānuga-mārgayoḥ sādhaka-siddha-daśayor ubhayatrāpy asyāḥ suṣṭhu vaiśiṣṭyaṁ sphuṭaṁ kathitam (anubhāṣya 2.9.167) ||11||</p></div><p class="small">Sanskrit gloss from the Anubhāṣya, as supplied in the Brzezinski edition of the Pūrva-vibhāga.</p></div>
+</details>
+</section>
+<section id="prabhupada">
+<h2>Śrīla Prabhupāda on this verse</h2>
+<p class="lede">Prabhupāda's two principal explanations of the verse, from the VedaBase 2025 text. Each links to the same passage on Vanisource.</p>
+<div class="pp">
+<div class="src"><h3>Śrī Caitanya-caritāmṛta, Madhya 19.167</h3><a href="https://vanisource.org/wiki/CC_Madhya_19.167" rel="noopener">Vanisource</a><a href="https://vedabase.io/en/library/cc/madhya/19/167/" rel="noopener">vedabase.io</a></div>
+<p class="withheld"><span class="badge b-warn">Withheld in this public copy</span> Śrīla Prabhupāda's translation and purport (BBT). <a href="https://vanisource.org/wiki/CC_Madhya_19.167" rel="noopener">Read it on Vanisource</a>.</p>
+
+
+</div>
+<div class="pp">
+<div class="src"><h3>The Nectar of Devotion, Introduction</h3><a href="https://vanisource.org/wiki/NOD_Introduction" rel="noopener">Vanisource</a><a href="https://vedabase.io/en/library/nod/introduction/" rel="noopener">vedabase.io</a></div>
+<p class="small">Excerpts: the paragraphs in which Prabhupāda explains the verse's terms</p>
+<p class="withheld"><span class="badge b-warn">Withheld in this public copy</span> Śrīla Prabhupāda's translation and purport (BBT). <a href="https://vanisource.org/wiki/NOD_Introduction" rel="noopener">Read it on Vanisource</a>.</p>
+</div>
+</section>
+<section id="quoted">
+<h2>Quoted by Prabhupāda</h2>
+<p class="lede">Every place in the VedaBase 2025 text where Prabhupāda quotes <i>anyābhilāṣitā-śūnyam</i>. The list was found by a diacritics-insensitive search of his books, lectures, conversations and letters. Book purports link to Vanisource; links for lectures come in the full build.</p>
+<div class="stats">
+<div class="stat"><b>310</b><span>places in all</span></div>
+<div class="stat"><b>69</b><span>book purports</span></div>
+<div class="stat"><b>240</b><span>lectures, walks and conversations</span></div>
+<div class="stat"><b>1</b><span>letter</span></div>
+</div>
+<div aria-label="Kind of source" class="tabs" role="tablist">
+<button aria-controls="panel-books" aria-selected="true" id="tab-books" role="tab" type="button">Books</button>
+<button aria-controls="panel-spoken" aria-selected="false" id="tab-spoken" role="tab" type="button">Spoken, by year</button>
+<button aria-controls="panel-letters" aria-selected="false" id="tab-letters" role="tab" type="button">Letters</button>
+</div>
+<div aria-labelledby="tab-books" class="qpanel" id="panel-books" role="tabpanel"><div class="qgroup"><h5>Śrīmad-Bhāgavatam <span class="count">50</span></h5><ul class="qlist"><li><a href="https://vanisource.org/wiki/SB_10.3.39" rel="noopener">SB 10.3.39</a></li><li><a href="https://vanisource.org/wiki/SB_10.10.20-22" rel="noopener">SB 10.10.20-22</a></li><li><a href="https://vanisource.org/wiki/SB_10.87.39" rel="noopener">SB 10.87.39</a></li><li><a href="https://vanisource.org/wiki/SB_11.2.38" rel="noopener">SB 11.2.38</a></li><li><a href="https://vanisource.org/wiki/SB_11.3.33" rel="noopener">SB 11.3.33</a></li><li><a href="https://vanisource.org/wiki/SB_11.21.11" rel="noopener">SB 11.21.11</a></li><li><a href="https://vanisource.org/wiki/SB_3.29.10" rel="noopener">SB 3.29.10</a></li><li><a href="https://vanisource.org/wiki/SB_3.29.11-12" rel="noopener">SB 3.29.11–12</a></li><li><a href="https://vanisource.org/wiki/SB_4.8.61" rel="noopener">SB 4.8.61</a></li><li><a href="https://vanisource.org/wiki/SB_4.22.27" rel="noopener">SB 4.22.27</a></li><li><a href="https://vanisource.org/wiki/SB_4.23.10" rel="noopener">SB 4.23.10</a></li><li><a href="https://vanisource.org/wiki/SB_4.23.12" rel="noopener">SB 4.23.12</a></li><li><a href="https://vanisource.org/wiki/SB_4.24.20" rel="noopener">SB 4.24.20</a></li><li><a href="https://vanisource.org/wiki/SB_4.29.46" rel="noopener">SB 4.29.46</a></li><li><a href="https://vanisource.org/wiki/SB_4.29.66" rel="noopener">SB 4.29.66</a></li><li><a href="https://vanisource.org/wiki/SB_4.31.14" rel="noopener">SB 4.31.14</a></li><li><a href="https://vanisource.org/wiki/SB_5.5.5" rel="noopener">SB 5.5.5</a></li><li><a href="https://vanisource.org/wiki/SB_5.5.7" rel="noopener">SB 5.5.7</a></li><li><a href="https://vanisource.org/wiki/SB_5.12.12" rel="noopener">SB 5.12.12</a></li><li><a href="https://vanisource.org/wiki/SB_5.17.11" rel="noopener">SB 5.17.11</a></li><li><a href="https://vanisource.org/wiki/SB_5.18.8" rel="noopener">SB 5.18.8</a></li><li><a href="https://vanisource.org/wiki/SB_5.18.21" rel="noopener">SB 5.18.21</a></li><li><a href="https://vanisource.org/wiki/SB_5.19.7" rel="noopener">SB 5.19.7</a></li><li><a href="https://vanisource.org/wiki/SB_5.19.25" rel="noopener">SB 5.19.25</a></li><li><a href="https://vanisource.org/wiki/SB_6.1.15" rel="noopener">SB 6.1.15</a></li><li><a href="https://vanisource.org/wiki/SB_6.4.52" rel="noopener">SB 6.4.52</a></li><li><a href="https://vanisource.org/wiki/SB_6.15.4" rel="noopener">SB 6.15.4</a></li><li><a href="https://vanisource.org/wiki/SB_6.16.34" rel="noopener">SB 6.16.34</a></li><li><a href="https://vanisource.org/wiki/SB_6.16.40" rel="noopener">SB 6.16.40</a></li><li><a href="https://vanisource.org/wiki/SB_6.18.74" rel="noopener">SB 6.18.74</a></li><li><a href="https://vanisource.org/wiki/SB_7.3.15-16" rel="noopener">SB 7.3.15–16</a></li><li><a href="https://vanisource.org/wiki/SB_7.5.14" rel="noopener">SB 7.5.14</a></li><li><a href="https://vanisource.org/wiki/SB_7.5.23-24" rel="noopener">SB 7.5.23–24</a></li><li><a href="https://vanisource.org/wiki/SB_7.6.25" rel="noopener">SB 7.6.25</a></li><li><a href="https://vanisource.org/wiki/SB_7.10.1" rel="noopener">SB 7.10.1</a></li><li><a href="https://vanisource.org/wiki/SB_7.10.2" rel="noopener">SB 7.10.2</a></li><li><a href="https://vanisource.org/wiki/SB_7.10.3" rel="noopener">SB 7.10.3</a></li><li><a href="https://vanisource.org/wiki/SB_7.10.4" rel="noopener">SB 7.10.4</a></li><li><a href="https://vanisource.org/wiki/SB_7.10.8" rel="noopener">SB 7.10.8</a></li><li><a href="https://vanisource.org/wiki/SB_7.13.24" rel="noopener">SB 7.13.24</a></li><li><a href="https://vanisource.org/wiki/SB_7.15.2" rel="noopener">SB 7.15.2</a></li><li><a href="https://vanisource.org/wiki/SB_7.15.73" rel="noopener">SB 7.15.73</a></li><li><a href="https://vanisource.org/wiki/SB_8.3.11" rel="noopener">SB 8.3.11</a></li><li><a href="https://vanisource.org/wiki/SB_8.3.20-21" rel="noopener">SB 8.3.20–21</a></li><li><a href="https://vanisource.org/wiki/SB_8.4.6" rel="noopener">SB 8.4.6</a></li><li><a href="https://vanisource.org/wiki/SB_8.12.6" rel="noopener">SB 8.12.6</a></li><li><a href="https://vanisource.org/wiki/SB_8.17.2-3" rel="noopener">SB 8.17.2–3</a></li><li><a href="https://vanisource.org/wiki/SB_9.9.46" rel="noopener">SB 9.9.46</a></li><li><a href="https://vanisource.org/wiki/SB_9.21.16" rel="noopener">SB 9.21.16</a></li><li><a href="https://vanisource.org/wiki/SB_9.24.62" rel="noopener">SB 9.24.62</a></li></ul></div><div class="qgroup"><h5>Śrī Caitanya-caritāmṛta <span class="count">12</span></h5><ul class="qlist"><li><a href="https://vanisource.org/wiki/CC_Antya_6.198" rel="noopener">Antya 6.198</a></li><li><a href="https://vanisource.org/wiki/CC_Antya_9.68" rel="noopener">Antya 9.68</a></li><li><a href="https://vanisource.org/wiki/CC_Madhya_6.175" rel="noopener">Madhya 6.175</a></li><li><a href="https://vanisource.org/wiki/CC_Madhya_8.68" rel="noopener">Madhya 8.68</a></li><li><a href="https://vanisource.org/wiki/CC_Madhya_9.263" rel="noopener">Madhya 9.263</a></li><li><a href="https://vanisource.org/wiki/CC_Madhya_12.135" rel="noopener">Madhya 12.135</a></li><li><a href="https://vanisource.org/wiki/CC_Madhya_13.140" rel="noopener">Madhya 13.140</a></li><li><a href="https://vanisource.org/wiki/CC_Madhya_16.72" rel="noopener">Madhya 16.72</a></li><li><a href="https://vanisource.org/wiki/CC_Madhya_19.150" rel="noopener">Madhya 19.150</a></li><li><a href="https://vanisource.org/wiki/CC_Madhya_19.167" rel="noopener">Madhya 19.167</a></li><li><a href="https://vanisource.org/wiki/CC_Madhya_24.330" rel="noopener">Madhya 24.330</a></li><li><a href="https://vanisource.org/wiki/CC_Adi_8.27" rel="noopener">Ādi 8.27</a></li></ul></div><div class="qgroup"><h5>Bhagavad-gītā As It Is <span class="count">2</span></h5><ul class="qlist"><li><a href="https://vanisource.org/wiki/BG_7.16" rel="noopener">Bg 7.16</a></li><li><a href="https://vanisource.org/wiki/BG_11.55" rel="noopener">Bg 11.55</a></li></ul></div><div class="qgroup"><h5>Nārada-bhakti-sūtra <span class="count">1</span></h5><ul class="qlist"><li><a href="https://vanisource.org/wiki/NBS_9" rel="noopener">NBS 9</a></li></ul></div><div class="qgroup"><h5>Journey of Self-Discovery <span class="count">1</span></h5><ul class="qlist"><li>JSD 2.7: Entering the Spiritual World</li></ul></div><div class="qgroup"><h5>Renunciation Through Wisdom <span class="count">1</span></h5><ul class="qlist"><li>RTW 2.6: Lord Kṛṣṇa Incarnates in Kali Yuga in the Form of His Holy Name</li></ul></div><div class="qgroup"><h5>Dialectic Spiritualism <span class="count">2</span></h5><ul class="qlist"><li>Friedrich Wilhelm Nietzsche [1844-1900]</li><li>Soren Aabye Kierkegaard [1813-1855]</li></ul></div></div>
+<div aria-labelledby="tab-spoken" class="qpanel" hidden="" id="panel-spoken" role="tabpanel"><details class="year"><summary><span>1966</span><span class="count">2</span></summary><ul class="qlist"><li>Bhagavad-gītā 8.20–22 – November 2, 1966, New York</li><li>Bhagavad-gītā 9.14–15 – November 28, 1966, New York</li></ul></details><details class="year"><summary><span>1968</span><span class="count">5</span></summary><ul class="qlist"><li>Bhagavad-gītā 4.5 – June 10, 1968, Montreal</li><li>Śrīmad-Bhāgavatam 7.9.8 – July 2, 1968, Montreal</li><li>Śrīmad-Bhāgavatam 7.9.10–11 – August 14, 1968, Montreal</li><li>Śrī Īśopaniṣad, Mantra 1 – October 30, 1968, Los Angeles</li><li>Talk, Initiation Lecture, – December 1, 1968, Los Angeles</li></ul></details><details class="year"><summary><span>1969</span><span class="count">3</span></summary><ul class="qlist"><li>Śrīmad-Bhāgavatam 1.5.9–11 – June 6, 1969, New Vrindavan</li><li>Śrīmad-Bhāgavatam 1.5.13 – June 13, 1969, New Vrindavan</li><li>Lecture Engagement – September 16, 1969, London</li></ul></details><details class="year"><summary><span>1970</span><span class="count">5</span></summary><ul class="qlist"><li>Room Conversation — November 7, 1970, Bombay</li><li>Śrīmad-Bhāgavatam 6.1.14 – November 10, 1970, Bombay</li><li>Room Conversation – December 13, 1970, Indore</li><li>Room Conversation – December 15, 1970, Indore</li><li>Śrīmad-Bhāgavatam 6.1.27–34 – December 16, 1970, Surat</li></ul></details><details class="year"><summary><span>1971</span><span class="count">26</span></summary><ul class="qlist"><li>Śrīmad-Bhāgavatam 6.1.56–62 – January 3, 1971, Surat</li><li>Śrīmad-Bhāgavatam 6.2.11 – January 16, 1971, Allahabad</li><li>Lecture in Hindi – January 17, 1971, Allahabad</li><li>Room Conversation – January 17, 1971, Allahabad</li><li>Lecture in Hindi – January 18, 1971, Allahabad</li><li>Śrī Caitanya-caritāmṛta Lecture in Hindi – February 1, 1971, Allahabad</li><li>Lecture in Hindi – February 1, 1971, Allahabad</li><li>Śrīmad-Bhāgavatam 6.3.16–17 – February 6, 1971, Gorakhpur</li><li>Śrīmad-Bhāgavatam 6.3.18–19 – February 12, 1971, Gorakhpur</li><li>Lecture – February 18, 1971, Gorakhpur</li><li>Śrīmad-Bhāgavatam 6.3.25–26 – February 18, 1971, Gorakhpur</li><li>Lecture on Teachings of Lord Caitanya – March 17, 1971, Bombay</li><li>Śrī Caitanya-caritāmṛta, Madhya-līlā 20.137–146 – March 24, 1971, Bombay</li><li>Bhagavad-gītā 7.16 – April 7, 1971, Bombay</li><li>Śrīmad-Bhāgavatam 1.8.18–19 – April 9, 1971, Bombay</li><li>Paṇḍāl Lecture – April 10, 1971, Bombay</li><li>Initiation Lecture [partially recorded] – July 2, 1971, Los Angeles</li><li>Lecture [partially recorded] – July 5, 1971, Los Angeles</li><li>Śrīmad-Bhāgavatam 6.1.13–14 – July 27, 1971, New York</li><li>Room Conversation with Apa Pante – August 4, 1971, London</li><li>Lecture Engagement – August 5, 1971, London</li><li>Śrīmad-Bhāgavatam 1.2.6 – August 27, 1971, London</li><li>Śrīmad-Bhāgavatam 7.5.22–30 – September 8, 1971, London</li><li>Śrīmad-Bhāgavatam 7.7.30–31 – September 12, 1971, Mombasa</li><li>Paṇḍāl Lecture-- November 14, 1971, Delhi</li><li>Śrīmad-Bhāgavatam 4.14.14 – November 16, 1971, Delhi</li></ul></details><details class="year"><summary><span>1972</span><span class="count">43</span></summary><ul class="qlist"><li>Lecture in Hindi – January 20, 1972, Jaipur</li><li>Lecture in Hindi – January 21, 1972, Jaipur</li><li>Śrīmad-Bhāgavatam 7.9.8–9 – March 6, 1972, Calcutta</li><li>Bhagavad-gītā 9.2 – March 7, 1972, Calcutta</li><li>Śrīmad-Bhāgavatam 7.9.9 – March 7, 1972, Calcutta</li><li>Śrīmad-Bhāgavatam 1.1.1–2 – March 22, 1972, Bombay</li><li>Room Conversation – April 2, 1972, Sydney</li><li>Śrīmad-Bhāgavatam 2.9.1–12 – April 29, 1972, Tokyo</li><li>Śrīmad-Bhāgavatam 2.3.2–7 – May 24, 1972, Los Angeles</li><li>Conversation with the GBC – May 25, 1972, Los Angeles</li><li>Śrīmad-Bhāgavatam 2.3.9 – May 26, 1972, Los Angeles</li><li>Śrīmad-Bhāgavatam 2.3.10 – May 28, 1972, Los Angeles</li><li>Śrīmad-Bhāgavatam 2.4.2 – June 25, 1972, Los Angeles</li><li>Room Conversation and Interview – July 3, 1972, New York</li><li>Śrīmad-Bhāgavatam 1.2.25 – August 28, 1972, Los Angeles</li><li>Śrīmad-Bhāgavatam 1.2.6 – September 4, 1972, New Vrindavan</li><li>Śrīmad-Bhāgavatam 1.3.7 – September 14, 1972, Los Angeles</li><li>Śrīmad-Bhāgavatam 1.3.18 – September 23, 1972, Los Angeles</li><li>Śrīmad-Bhāgavatam 1.3.26 – October 1, 1972, Los Angeles</li><li>Lecture in Hindi – October 14, 1972, Delhi</li><li>Śrīmad-Bhāgavatam 1.2.5 – October 16, 1972, Vṛndāvana</li><li>Śrīmad-Bhāgavatam 1.2.6 – October 17, 1972, Vṛndāvana</li><li>Śrīmad-Bhāgavatam 1.2.7 – October 18, 1972, Vṛndāvana</li><li>The Nectar of Devotion – October 18, 1972, Vṛndāvana</li><li>The Nectar of Devotion – October 20, 1972, Vṛndāvana</li><li>The Nectar of Devotion – October 21, 1972, Vṛndāvana</li><li>Sannyāsa Initiation – October 22, 1972, Vṛndāvana</li><li>The Nectar of Devotion – October 27, 1972, Vṛndāvana</li><li>The Nectar of Devotion – October 28, 1972, Vṛndāvana</li><li>The Nectar of Devotion – November 1, 1972, Vṛndāvana</li><li>The Nectar of Devotion – November 2, 1972, Vṛndāvana</li><li>The Nectar of Devotion – November 3, 1972, Vṛndāvana</li><li>The Nectar of Devotion – November 4, 1972, Vṛndāvana</li><li>Śrīmad-Bhāgavatam 1.2.27 – November 7, 1972, Vṛndāvana</li><li>The Nectar of Devotion – November 10, 1972, Vṛndāvana</li><li>The Nectar of Devotion – November 11, 1972, Vṛndāvana</li><li>Śrīmad-Bhāgavatam 1.2.33 – November 12, 1972, Vṛndāvana</li><li>The Nectar of Devotion – November 14, 1972, Vṛndāvana</li><li>Bhagavad-gītā 2.1 – December 6, 1972, Ahmedabad</li><li>Bhagavad-gītā 18.67 – December 10, 1972, Ahmedabad</li><li>Bhagavad-gītā 6.47 – December 12, 1972, Ahmedabad</li><li>The Nectar of Devotion – December 26, 1972, Bombay</li><li>The Nectar of Devotion – December 27, 1972, Bombay</li></ul></details><details class="year"><summary><span>1973</span><span class="count">27</span></summary><ul class="qlist"><li>The Nectar of Devotion – January 1, 1973, Bombay</li><li>Śrī Brahma-saṁhitā – January 3, 1973, Bombay</li><li>The Nectar of Devotion – January 5, 1973, Bombay</li><li>Śrīmad-Bhāgavatam 5th Canto, Pandal Lecture – January 12, 1973, Bombay</li><li>The Nectar of Devotion – January 25, 1973, Calcutta</li><li>The Nectar of Devotion – January 29, 1973, Calcutta</li><li>Śrīmad-Bhāgavatam 6.1.15–17 – February 22, 1973, Auckland</li><li>Bhagavad-gītā 10.1–3 – March 6, 1973, Calcutta</li><li>Śrīmad-Bhāgavatam 1.8.18 – April 10, 1973, New York</li><li>Śrīmad-Bhāgavatam 1.8.31 – April 23, 1973, Los Angeles</li><li>Śrīmad-Bhāgavatam 1.8.42 – May 4, 1973, Los Angeles</li><li>Śrīmad-Bhāgavatam 1.10.4 – June 19, 1973, Māyāpur</li><li>Arrival Address at Bhaktivedanta Manor – July 7, 1973, London</li><li>Room Conversation with David Wynne, Sculptor – July 9, 1973, London</li><li>Room Conversation with Malcolm – July 18, 1973, London</li><li>Bhagavad-gītā 1.41–42 – July 29, 1973, London</li><li>Room Conversation with Satish Kumar, Editor of Resurgence Magazine – July 30, 1973, London</li><li>Room Conversation with George Harrison &amp; the Shankars – August 5, 1973, London</li><li>Śrīmad-Bhāgavatam 5.5.1–2 – August 12, 1973, Paris</li><li>Bhagavad-gītā 2.9 – August 15, 1973, London</li><li>Śrīmad-Bhāgavatam 5.5.1–2 – September 7, 1973, Stockholm</li><li>Śrīmad-Bhāgavatam 5.5.3 – September 9, 1973, Stockholm</li><li>Room Conversation – September 19, 1973, Bombay</li><li>Bhagavad-gītā 7.3 – October 31, 1973, Vṛndāvana</li><li>Śrīmad-Bhāgavatam 1.2.7 – November 13, 1973, Delhi</li><li>Śrīmad-Bhāgavatam 1.2.9–10 – November 14, 1973, Delhi</li><li>Śrīmad-Bhāgavatam 1.2.12 – November 18, 1973, Delhi</li></ul></details><details class="year"><summary><span>1974</span><span class="count">29</span></summary><ul class="qlist"><li>Morning Walk – January 11, 1974, Los Angeles</li><li>Morning Walk – March 6, 1974, Māyāpur</li><li>Śrī Caitanya-caritāmṛta, Ādi-līlā 7.91–2 – March 13, 1974, Vṛndāvana</li><li>Bhagavad-gītā 4.3 – March 23, 1974, Bombay</li><li>Morning Walk – March 25, 1974, Bombay</li><li>Bhagavad-gītā 4.5 – March 25, 1974, Bombay</li><li>Bhagavad-gītā 4.8 – March 28, 1974, Bombay</li><li>Bhagavad-gītā 4.11 – March 31, 1974, Bombay</li><li>Bhagavad-gītā 4.19 – April 8, 1974, Bombay</li><li>Bhagavad-gītā 4.20 – April 9, 1974, Bombay</li><li>Morning Walk – April 12, 1974, Bombay</li><li>Morning Walk – May 2, 1974, Bombay</li><li>Room Conversation with Mr. Deshimaru – June 13, 1974, Paris</li><li>Bhagavad-gītā 2.13 – June 18, 1974, Germany</li><li>Morning Walk – June 19, 1974, Germany</li><li>Bhagavad-gītā 2.14 – June 23, 1974, Germany</li><li>Bhagavad-gītā 7.1 – June 29, 1974, Melbourne</li><li>Śrīmad-Bhāgavatam 1.2.18 – September 26, 1974, Calcutta</li><li>Śrīmad-Bhāgavatam 1.2.19 – September 27, 1974, Calcutta</li><li>Śrīmad-Bhāgavatam 1.8.20 – September 30, 1974, Māyāpur</li><li>Śrīmad-Bhāgavatam 1.8.26 – October 6, 1974, Māyāpur</li><li>Śrīmad-Bhāgavatam 1.8.39 – October 19, 1974, Māyāpur</li><li>Śrīmad-Bhāgavatam 1.8.42 – October 22, 1974, Māyāpur</li><li>Śrīmad-Bhāgavatam 1.8.43 – October 23, 1974, Māyāpur</li><li>Śrīmad-Bhāgavatam 1.8.48 – October 28, 1974, Māyāpur</li><li>Śrīmad-Bhāgavatam 3.25.32 – December 2, 1974, Bombay</li><li>Śrīmad-Bhāgavatam 3.25.33–34 – December 3, 1974, Bombay</li><li>Śrīmad-Bhāgavatam 3.25.39–40 – December 8, 1974, Bombay</li><li>Śrīmad-Bhāgavatam 3.26.15 – December 24, 1974, Bombay</li></ul></details><details class="year"><summary><span>1975</span><span class="count">39</span></summary><ul class="qlist"><li>Śrīmad-Bhāgavatam 3.26.34 – January 11, 1975, Bombay</li><li>Śrīmad-Bhāgavatam 3.26.46 – January 21, 1975, Bombay</li><li>Bhagavad-gītā 16.8 – February 4, 1975, Honolulu</li><li>Bhagavad-gītā 16.13–15 – February 8, 1975, Honolulu</li><li>Morning Walk Through the BBT Warehouse – February 10, 1975, Los Angeles</li><li>Room Conversation with Sanskrit Professor – February 12, 1975, Mexico City</li><li>Bhagavad-gītā 2.16 – February 16, 1975, Mexico City</li><li>Śrīmad-Bhāgavatam 1.1.3 – February 24, 1975, Caracas</li><li>Room Conversation with three Trappist Monks – March 1, 1975, Atlanta</li><li>Śrīmad-Bhāgavatam 2.2.6 – March 6, 1975, New York</li><li>Śrīmad-Bhāgavatam 1.2.7 – [Hindi Translated into English] – March 22, 1975, Calcutta</li><li>Śrī Caitanya-caritāmṛta, Ādi-līlā 1.11 – April 4, 1975, Māyāpur</li><li>Śrī Caitanya-caritāmṛta, Ādi-līlā 1.16 – April 9, 1975, Māyāpur</li><li>Śrīmad-Bhāgavatam 5.5.2 – April 12, 1975, Hyderabad</li><li>Śrīmad-Bhāgavatam 5.5.2 – April 13, 1975, Hyderabad</li><li>Śrīmad-Bhāgavatam 6.1.1–2 – May 22, 1975, Melbourne</li><li>Departure – June 20, 1975, Honolulu</li><li>Śrīmad-Bhāgavatam 6.1.9 – June 22, 1975, Los Angeles</li><li>Garden Conversation with Dr. Allen Gerson – June 22, 1975, Los Angeles</li><li>Śrīmad-Bhāgavatam 1.2.6 – Sunday Feast – June 29, 1975, Denver</li><li>Śrīmad-Bhāgavatam 6.1.51 – August 4, 1975, Detroit</li><li>Śrīmad-Bhāgavatam 6.1.55 – August 13, 1975, London</li><li>Śrīmad-Bhāgavatam 6.2.11 – September 13, 1975, Vṛndāvana</li><li>Morning Walk – September 19, 1975, Vṛndāvana</li><li>Śrīmad-Bhāgavatam 6.2.17 – September 20, 1975, Vṛndāvana</li><li>Morning Walk – October 20, 1975, Johannesburg</li><li>Śrīmad-Bhāgavatam 3.28.17 – October 26, 1975, Nairobi</li><li>Śrīmad-Bhāgavatam 3.28.21 – November 1, 1975, Nairobi</li><li>Morning Walk – November 3, 1975, Bombay</li><li>Śrī Caitanya-caritāmṛta, Madhya-līlā 6.154 – November 24, 1975, Bombay</li><li>Śrīmad-Bhāgavatam 7.6.1 – December 2, 1975, Vṛndāvana</li><li>Śrīmad-Bhāgavatam 7.6.3 – December 4, 1975, Vṛndāvana</li><li>Morning Walk – December 10, 1975, Vṛndāvana</li><li>Morning Walk – December 12, 1975, Vṛndāvana</li><li>Bhagavad-gītā 7.1 – December 20, 1975, Bombay</li><li>Morning Walk – December 23, 1975, Bombay</li><li>Bhagavad-gītā 7.1 [with Translator] – December 25, 1975, Sanand</li><li>Bhagavad-gītā 16.7 [with translator] – December 26, 1975, Sanand</li><li>Bhagavad-gītā 7.7 [with Translator] – December 27, 1975, Sanand</li></ul></details><details class="year"><summary><span>1976</span><span class="count">50</span></summary><ul class="qlist"><li>Śrīmad-Bhāgavatam 7.6.1 – January 2, 1976, Madras</li><li>Śrīmad-Bhāgavatam 6.1.15 – January 8, 1976, Nellore</li><li>Śrīmad-Bhāgavatam 5.5.2 translated from Bengali – January 14, 1976, Calcutta</li><li>Morning Walk – February 4, 1976, Māyāpur</li><li>Morning Walk – February 6, 1976, Māyāpur</li><li>Śrīmad-Bhāgavatam 7.9.1 – February 8, 1976, Māyāpur</li><li>Śrīmad-Bhāgavatam 7.9.3 – February 10, 1976, Māyāpur</li><li>Śrīmad-Bhāgavatam 7.9.4 – February 11, 1976, Māyāpur</li><li>Śrīmad-Bhāgavatam 7.9.16 – February 23, 1976, Māyāpur</li><li>Śrīmad-Bhāgavatam 7.9.23 – March 1, 1976, Māyāpur</li><li>Śrīmad-Bhāgavatam 7.9.27 – March 5, 1976, Māyāpur</li><li>Śrīmad-Bhāgavatam 7.9.28 – March 6, 1976, Māyāpur</li><li>Morning Walk – March 25, 1976, Delhi</li><li>Śrīmad-Bhāgavatam 7.9.51 – April 6, 1976, Vṛndāvana</li><li>Morning Walk – April 8, 1976, Vṛndāvana</li><li>Śrīmad-Bhāgavatam 7.9.54 – April 9, 1976, Vṛndāvana</li><li>Bhagavad-gītā 9.4 – April 22, 1976, Melbourne</li><li>Morning Walk – May 3, 1976, Fiji</li><li>Śrīmad-Bhāgavatam 6.1.15 – May 15, 1976, Honolulu</li><li>Śrīmad-Bhāgavatam 6.1.17 – May 17, 1976, Honolulu</li><li>Śrīmad-Bhāgavatam 6.1.37 – June 3, 1976, Los Angeles</li><li>Śrīmad-Bhāgavatam 6.1.43 – June 9, 1976, Los Angeles</li><li>Garden Conversation – June 9, 1976, Los Angeles</li><li>Śrīmad-Bhāgavatam 6.1.45 – June 11, 1976, Los Angeles</li><li>Śrīmad-Bhāgavatam 6.1.46 – June 12, 1976, Detroit</li><li>Śubhavilāsa Home Engagement – June 19, 1976, Toronto</li><li>Śrīmad-Bhāgavatam 7.6.5 – June 21, 1976, Toronto</li><li>Śrīmad-Bhāgavatam 7.6.17–18 – July 1, 1976, New Vrindavan</li><li>Conversation with Dr. Shaligram Shukla–Part 1 – July 5, 1976, Washington, D.C.</li><li>Room Conversation – July 31, 1976, New Māyāpur</li><li>Evening Darśana – August 10, 1976, Tehran</li><li>Evening Darśana – August 14, 1976, Bombay</li><li>Room Conversation – August 16, 1976, Bombay</li><li>Meeting with Mr. Suraj Narayan Raju, Endowments Commissioner – August 24, 1976, Hyderabad</li><li>Morning Walk at Buddha Jayanti Park – August 30, 1976, Delhi</li><li>Room Conversation – September 5, 1976, Vṛndāvana</li><li>Śrīmad-Bhāgavatam 1.7.11 – September 10, 1976, Vṛndāvana</li><li>Śrīmad-Bhāgavatam 1.7.30–31 – September 26, 1976, Vṛndāvana</li><li>Śrīmad-Bhāgavatam 1.7.40 – October 1, 1976, Vṛndāvana</li><li>Śrīmad-Bhāgavatam 1.2.6 in Hindi – October 10, 1976, Aligarh</li><li>Bhagavad-gītā 7.1 in Hindi – October 15, 1976, Chandigarh</li><li>Bhagavad-gītā 9.3 in Hindi – October 6, 1976, Chandigarh</li><li>Śrīmad-Bhāgavatam 5.5.4 – October 26, 1976, Vṛndāvana</li><li>Śrīmad-Bhāgavatam 5.5.16 – November 4, 1976, Vṛndāvana</li><li>Śrīmad-Bhāgavatam 5.5.23 – November 10, 1976, Vṛndāvana</li><li>Śrīmad-Bhāgavatam 5.5.25 – November 12, 1976, Vṛndāvana</li><li>Room Conversation – November 20, 1976, Vṛndāvana</li><li>Śrīmad-Bhāgavatam 5.6.6 – November 28, 1976, Vṛndāvana</li><li>Śrīmad-Bhāgavatam 5.5.2 in Hindi – December 25, 1976, Bombay</li><li>Room Conversation – December 30, 1976, Bombay</li></ul></details><details class="year"><summary><span>1977</span><span class="count">11</span></summary><ul class="qlist"><li>Conversation with Yogi Amrit Desai of Kripalu Ashram, Pennsylvania, USA – January 2, 1977, Bombay</li><li>Morning Walk – January 4, 1977, Bombay</li><li>Morning Walk – January 8, 1977, Bombay</li><li>Morning Darśana with Ramkrishna Bajaj and friends – January 9, 1977, Bombay</li><li>Room Conversation – January 28, 1977, Bhubaneswar</li><li>Śrīmad-Bhāgavatam 7.9.4 – February 18, 1977, Māyāpur</li><li>Śrīmad-Bhāgavatam 7.9.9 – March 1, 1977, Māyāpur</li><li>Evening Darśana – May 13, 1977, Rishikesh</li><li>Morning Talk – June 27, 1977, Vṛndāvana</li><li>Room Conversation with Vrindavan De – July 6, 1977, Vṛndāvana</li><li>Room Conversation – October 18, 1977, Vṛndāvana</li></ul></details></div>
+<div aria-labelledby="tab-letters" class="qpanel" hidden="" id="panel-letters" role="tabpanel"><ul class="qlist"><li>Letter to: Dr. Ghosh — Vrindaban 17 March, 1974</li></ul></div>
+</section>
+<section id="links">
+<h2>Related verses</h2>
+<p class="lede">Links out of this verse, generated from the texts above.</p>
+<div class="compare">
+<div class="tr"><div class="who">Same verse</div><p><a href="https://vanisource.org/wiki/CC_Madhya_19.167" rel="noopener">Caitanya-caritāmṛta, Madhya 19.167</a>: quoted by Śrī Caitanya in His teachings to Rūpa Gosvāmī at Prayāga. It is also verse 1 of Viśvanātha Cakravartī's digest <i>Bhakti-rasāmṛta-sindhu-bindu</i>.</p></div>
+<div class="tr"><div class="who">Supporting evidence</div><p>BRS 1.1.12 (Nārada-pañcarātra, <i>sarvopādhi-vinirmuktam</i>): Jīva matches its terms one by one to this verse. BRS 1.1.13–15 quotes <a href="https://vanisource.org/wiki/SB_3.29.12" rel="noopener">SB 3.29.12–14</a>.</p></div>
+<div class="tr"><div class="who">Cited in the commentaries</div><p><a href="https://vanisource.org/wiki/SB_1.13.30" rel="noopener">SB 1.13.30</a>, <a href="https://vanisource.org/wiki/SB_10.9.6" rel="noopener">SB 10.9.6</a>, <a href="https://vanisource.org/wiki/SB_11.3.31" rel="noopener">SB 11.3.31</a> (Viśvanātha); BRS 1.2.81 on offences; BRS 1.3.1 on <i>bhāva</i>.</p></div>
+<div class="tr"><div class="who">Topics</div><div class="chips"><span class="chip">uttama-bhakti</span><span class="chip">anuśīlana</span><span class="chip">ānukūlya</span><span class="chip">anyābhilāṣitā</span><span class="chip">jñāna-karmādy-anāvṛta</span><span class="chip">svarūpa-lakṣaṇa</span><span class="chip">taṭastha-lakṣaṇa</span></div></div>
+</div>
+</section>
+<div class="pn">
+<a href="#top"><span class="dir">← 1.1.10</span><div class="iast" lang="sa-Latn">tatrādau suṣṭhu vaiśiṣṭyam asyāḥ kathayituṁ sphuṭam<br/>lakṣaṇaṁ kriyate bhakter uttamāyāḥ satāṁ matam ||10</div></a>
+<a href="#top"><span class="dir">1.1.12 →</span><div class="iast" lang="sa-Latn">sarvopādhi-vinirmuktaṁ tat-paratvena nirmalam<br/>hṛṣīkeṇa hṛṣīkeśa-sevanaṁ bhaktir ucyate ||12</div></a>
+</div>
+<div class="review">
+<h2>What we would like your view on</h2>
+<ol>
+<li>Is the order of layers right? Original, then translation, word for word, commentaries, and Prabhupāda last. Or should Prabhupāda's rendering come first for ISKCON readers?</li>
+<li>Should commentaries open expanded, or collapsed with a one-line summary each?</li>
+<li>Is a Bengali-script view of Sanskrit verses useful to your readers, or only for the Bengali works?</li>
+<li>How should the “Quoted by Prabhupāda” list link into Vanisource for lectures? It needs your page-naming rules.</li>
+<li>Anything you would want on a verse page that is missing here.</li>
+</ol>
+</div>
+<footer>
+    Built on 23 September 2026 from the Bhakti Yoga Foundation's text library. Bhanu Swami's translation and notes, the Sanskrit commentaries (Haridāsa Dāsa, ed. 1951, via J. Brzezinski), Śrīla Prabhupāda's texts (© The Bhaktivedanta Book Trust, VedaBase 2025) and D. L. Haberman's translation are shown here only for review. Permissions for publication are being requested. The Bengali-script verse is generated from the Devanāgarī and has not yet been proofread.
+  <p>In this public copy for the design comparison, every translation under copyright is withheld and marked.</p></footer>
+</main>
+<aside aria-label="About this verse">
+<div class="card">
+<h3>About this verse</h3>
+<dl class="facts">
+<dt>Work</dt><dd><i>Bhakti-rasāmṛta-sindhu</i>, Śrīla Rūpa Gosvāmī</dd>
+<dt>Place</dt><dd>Eastern Division, Wave 1 (<i>sāmānya-bhakti</i>)</dd>
+<dt>Metre</dt><dd><i>anuṣṭubh</i> (4 × 8 syllables)</dd>
+<dt>Function</dt><dd>Definition: <i>svarūpa-lakṣaṇa</i> plus two <i>taṭastha-lakṣaṇas</i> (Jīva)</dd>
+<dt>Also in</dt><dd>CC Madhya 19.167; Bindu, verse 1</dd>
+</dl>
+</div>
+<div class="card">
+<h3>Layers and their status</h3>
+<ul class="status">
+<li><span>Devanāgarī and IAST<small>BBT, CC Madhya 19.167</small></span><span class="badge b-ok">Verified</span></li>
+<li><span>Bengali script<small>generated from Devanāgarī</small></span><span class="badge b-warn">Unproofed</span></li>
+<li><span>Translation and commentaries<small>Bhanu Swami</small></span><span class="badge b-info">Licence requested</span></li>
+<li><span>Sanskrit commentaries<small>Haridāsa Dāsa 1951, Unicode</small></span><span class="badge b-warn">Unverified</span></li>
+<li><span>Prabhupāda layers<small>VedaBase 2025</small></span><span class="badge b-ok">Verified</span></li>
+<li><span>Haberman translation<small>2003 edition</small></span><span class="badge b-info">Licence needed</span></li>
+</ul>
+</div>
+<div class="card">
+<h3>Editorial flag</h3>
+<p class="flag">The colophon dates the work with the chronogram <i>rāmāṅga-śatru-gaṇite śāke</i>. Bhanu Swami's translation reads it as Śaka 1436. The date usually given is Śaka 1463 (1541 CE). This needs checking before the Work page is published.</p>
+</div>
+<div class="card">
+<h3>Cite this verse</h3>
+<p class="cite" id="cite">Rūpa Gosvāmī, Bhakti-rasāmṛta-sindhu 1.1.11, trans. Bhanu Swami. Acaryapedia, https://acaryapedia.org/brs/1.1.11 (prototype, 23 Sep 2026).</p>
+<button class="toggle" id="copycite" type="button">Copy citation</button>
+<span class="small" id="copied" role="status"></span>
+</div>
+</aside>
+</div>
+</div>
+<script>
+(function(){
+  var btns=document.querySelectorAll('.seg button'),dv=document.getElementById('orig-deva'),bn=document.getElementById('orig-beng');
+  function setScript(s){btns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.script===s?'true':'false')});dv.hidden=s!=='deva';bn.hidden=s!=='beng';try{localStorage.setItem('ap-script',s)}catch(e){}}
+  btns.forEach(function(b){b.addEventListener('click',function(){setScript(b.dataset.script)})});
+  try{var s=localStorage.getItem('ap-script');if(s)setScript(s)}catch(e){}
+  document.querySelectorAll('button.toggle[aria-controls]').forEach(function(b){b.addEventListener('click',function(){var t=document.getElementById(b.getAttribute('aria-controls'));var open=t.hidden;t.hidden=!open;b.setAttribute('aria-expanded',open?'true':'false');b.textContent=open?'Hide Sanskrit':'Show Sanskrit'})});
+  var tabs=document.querySelectorAll('[role=tab]');
+  tabs.forEach(function(t){t.addEventListener('click',function(){tabs.forEach(function(u){var on=u===t;u.setAttribute('aria-selected',on?'true':'false');document.getElementById(u.getAttribute('aria-controls')).hidden=!on})})});
+  var cb=document.getElementById('copycite'),msg=document.getElementById('copied'),ct=document.getElementById('cite');
+  cb.addEventListener('click',function(){var txt=ct.textContent;function sel(){var r=document.createRange();r.selectNodeContents(ct);var s=window.getSelection();s.removeAllRanges();s.addRange(r);msg.textContent='Selected — press Ctrl+C to copy'}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(function(){msg.textContent='Copied'},sel)}else sel()});
+  document.querySelectorAll('a[href^="#n"],a[href^="#r"]').forEach(function(a){a.addEventListener('click',function(){var d=a.closest('details');if(d)d.open=true})});
+})();
+</script>
+</body>
+</html>
