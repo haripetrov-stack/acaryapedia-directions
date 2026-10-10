@@ -102,15 +102,6 @@ mark { background: var(--marker); color: var(--ink); padding: 0 .1em; border-rad
 .rest summary { font: 400 16px/1.4 var(--sans); color: var(--blue); cursor: pointer; padding: 10px 0; text-decoration: underline; text-underline-offset: .22em; }
 .rest[open] summary { margin-bottom: 6px; }
 
-/* status marks: the shape says it too, not only the colour */
-.status { display: inline-flex; align-items: center; gap: 7px; font: 400 14px/1.2 var(--sans); padding: 3px 9px 3px 7px; border-radius: 3px; white-space: normal; }
-.status i { flex: none; width: 12px; height: 12px; border-radius: 50%; border: 2px solid currentColor; }
-.s-ver { background: #DDF0E0; color: #1E5B2B; }
-.s-ver i { background: currentColor; }
-.s-unv { background: #FFF0C9; color: #6B4200; }
-.s-unv i { background: linear-gradient(90deg, currentColor 50%, transparent 50%); }
-.s-ocr { background: #E4EAEE; color: #3A4954; }
-.s-ocr i { border-style: dashed; }
 
 @media (max-width: 719px) {
   .hit { grid-template-columns: minmax(0, 1fr); border-left: 0; }
@@ -184,7 +175,6 @@ mark { background: var(--marker); color: var(--ink); padding: 0 .1em; border-rad
 .toggles { display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: center; font: 400 15px/1.3 var(--sans); }
 .toggles label { display: inline-flex; align-items: center; gap: 8px; padding: 5px 0; cursor: pointer; }
 .toggles input { width: 20px; height: 20px; margin: 0; accent-color: var(--blue); }
-.legend { font: 400 14px/1.4 var(--sans); color: var(--muted); margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; }
 body:has(#t-iast:not(:checked)) .layer-iast,
 body:has(#t-deva:not(:checked)) .layer-deva,
 body:has(#t-beng:not(:checked)) .layer-beng,
@@ -238,7 +228,7 @@ main > .wrap:last-child { padding-bottom: clamp(40px, 6vw, 72px); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
-@media (forced-colors: active) { mark { outline: 1px solid; } .status i { forced-color-adjust: none; } }
+@media (forced-colors: active) { mark { outline: 1px solid; } }
 @media (max-width: 479px) {
   .orig .layer { padding: 14px 14px 16px; }
   .orig .vtext.iast { font-size: 19px; }

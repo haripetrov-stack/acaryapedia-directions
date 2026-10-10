@@ -98,9 +98,7 @@ input[type="email"], input[type="search"] { font: inherit; }
 .form-note { margin: 0.5rem 0 0; font-size: 0.875rem; color: var(--ink-soft); }
 .status { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.12rem 0.5rem 0.12rem 0.4rem; border: 1.5px solid var(--ink); border-radius: 2px; font-size: 0.8125rem; font-weight: 600; line-height: 1.25; max-width: 100%; color: var(--ink); background: transparent; }
 .status svg { flex: none; }
-.status--ok { background: var(--ink); color: #fff; }
 .status--unv { border-style: dashed; }
-.status--ocr { background: repeating-linear-gradient(135deg, transparent 0 5px, color-mix(in srgb, var(--ink) 11%, transparent) 5px 6px); }
 
 /* the release block and the search "command line" (both pages) */
 .release h2, .cmd h2 { font: 700 clamp(1.5rem, 1.15rem + 1.3vw, 2.2rem)/1.15 var(--f-serif); letter-spacing: -0.01em; margin: 0 0 1.25rem; }
@@ -395,9 +393,6 @@ body:has(#t-trans:not(:checked)) .l-trans, body:has(#t-comm:not(:checked)) .l-co
 .scans { list-style: none; display: flex; gap: 1rem; margin: 0.5rem 0 0; padding: 0; max-width: 22rem; }
 .scans li { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.875rem; color: var(--ink-soft); }
 .scans img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); }
-.marks { margin: 0; }
-.marks dt { margin: 0.85rem 0 0.3rem; }
-.marks dd { margin: 0; font-size: 0.9375rem; color: var(--ink-soft); }
 .vw .release { margin-top: clamp(3rem, 6vw, 5rem); }
 .vw .cmd { margin-block: clamp(2.5rem, 5vw, 4rem); }
 .lede-s { max-width: 40rem; font-size: 1.125rem; }

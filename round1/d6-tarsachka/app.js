@@ -272,12 +272,6 @@
 
   /* ---------- 4. Result markup (the same function writes the static example and the live results) ---------- */
 
-  var STATUS = {
-    unv: ['s-unv', 'unverified text'],
-    ocr: ['s-ocr', 'uncorrected OCR'],
-    ver: ['s-ver', 'verified against print']
-  };
-  function status(k) { return '<span class="status ' + STATUS[k][0] + '"><i aria-hidden="true"></i>' + STATUS[k][1] + '</span>'; }
   var NUMBER = new Intl.NumberFormat('en');
   var WORK = 'Upadeśāmṛta';
 
@@ -298,14 +292,14 @@
       });
     });
     return '<li class="hit t-verse"><div class="spine"><a class="cite" href="' + verseHref(h.v, q) + '"><i>' + WORK + '</i> ' + h.v.n + '</a>' +
-      '<span class="what">The verse itself</span>' + status('unv') + '</div>' +
+      '<span class="what">The verse itself</span></div>' +
       '<div class="said">' + rows + '<p class="open"><a href="' + verseHref(h.v, q) + '">Read text ' + h.v.n + ' with all its commentaries</a></p></div></li>';
   }
 
   function hitComm(h, q) {
     var ex = excerpt(h.c.text, h.ranges, 70, 150);
     return '<li class="hit t-comm"><div class="spine"><a class="cite" href="' + verseHref(h.v, q, '#c' + h.c.k) + '"><i>' + WORK + '</i> ' + h.v.n + '</a>' +
-      '<span class="what"><i>' + esc(h.c.title) + '</i>' + (h.c.by ? ' by ' + esc(h.c.by) : '') + '</span>' + status('ocr') + '</div>' +
+      '<span class="what"><i>' + esc(h.c.title) + '</i>' + (h.c.by ? ' by ' + esc(h.c.by) : '') + '</span></div>' +
       '<div class="said"><p class="excerpt" lang="' + h.c.lang + '">' + ex + '</p>' +
       (!h.near && h.ranges.length > 1 ? '<p class="more">' + (h.ranges.length - 1) + ' more in this commentary</p>' : '') + '</div></li>';
   }
@@ -400,7 +394,7 @@
   }
 
   var core = { foldText: foldText, findRanges: findRanges, nextOcc: nextOcc, prepare: prepare, search: search, resultsHTML: resultsHTML, markUp: markUp,
-    excerpt: excerpt, splitTitle: splitTitle, esc: esc, status: status, plural: plural };
+    excerpt: excerpt, splitTitle: splitTitle, esc: esc, plural: plural };
   if (typeof module !== 'undefined' && module.exports) { module.exports = core; return; }
 
   /* ---------- 6. Page behaviour (browser only) ---------- */

@@ -11,8 +11,6 @@
   --note-line: #8C7F16;
   --note-ink: #4F4600;
   --rule: #6C8096;
-  --st-un: #6B4200; --st-un-bg: #FFF1D6;
-  --st-ocr: #7A1F14; --st-ocr-bg: #FBE4E1;
   --st-ok: #1C5A2B; --st-ok-bg: #DDF0E1;
   --serif: "Charis SIL", Charter, Georgia, "Times New Roman", serif;
   --sans: "Merriweather Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
@@ -239,20 +237,6 @@ p { margin: 0 0 1em; max-width: 68ch; }
 .chip input:checked + span::before { background: var(--blue); border-color: var(--blue); }
 .chip input:checked + span::after { content: ""; position: absolute; left: 15px; top: 50%; width: 3px; height: 7px; border: solid #fff; border-width: 0 2px 2px 0; transform: translateY(-62%) rotate(45deg); }
 .chip input:focus-visible + span { outline: 3px solid var(--blue); outline-offset: 3px; }
-.legend { margin: 8px 0 0; font: 15px/1.5 var(--sans); }
-.legend summary { cursor: pointer; color: var(--blue); font-weight: 600; width: fit-content; }
-.legend dl { margin: 10px 0 0; display: grid; gap: 8px; max-width: 70ch; }
-.legend dt { margin: 0; }
-.legend dd { margin: 2px 0 0; color: var(--muted); }
-
-.status { display: inline-flex; align-items: center; gap: 7px; padding: 3px 10px 3px 8px; border-radius: 12px; font: 600 14px/1.3 var(--sans); white-space: normal; }
-.status::before { content: ""; width: 11px; height: 11px; border-radius: 50%; border: 2px solid currentColor; flex: none; }
-.st-un { color: var(--st-un); background: var(--st-un-bg); }
-.st-ocr { color: var(--st-ocr); background: var(--st-ocr-bg); }
-.st-ocr::before { background: linear-gradient(90deg, currentColor 50%, transparent 50%); }
-.st-ok { color: var(--st-ok); background: var(--st-ok-bg); }
-.st-ok::before { background: currentColor; }
-
 .lesson-main section.step { margin-top: 56px; scroll-margin-top: 16px; }
 .step > h2 { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
 .step > h2 .node { width: 38px; height: 38px; font-size: 16px; flex: none; }
@@ -316,7 +300,6 @@ p { margin: 0 0 1em; max-width: 68ch; }
 .read[open] summary::before { transform: rotate(45deg); top: 19px; }
 .read .r-title { font: 700 19px/1.3 var(--serif); }
 .read .r-by { font: 16px/1.4 var(--sans); color: var(--muted); }
-.read .r-meta { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; }
 .read .r-body { padding: 4px 16px 20px 16px; }
 .r-text p { font-family: var(--bn); font-size: 19px; line-height: 2; max-width: 62ch; margin: 0 0 .9em; }
 .r-text[lang="sa-Beng"] p { font-size: 19px; }
@@ -352,6 +335,6 @@ p { margin: 0 0 1em; max-width: 68ch; }
 .lesson-main:has(#l-comm:not(:checked)) .layer-comm { display: none; }
 
 @media print {
-  .house, .site-head, .rail, .layers, .legend, .skip, .site-foot, .finish, .lesson-nav { display: none; }
+  .house, .site-head, .rail, .layers, .skip, .site-foot, .finish, .lesson-nav { display: none; }
   body { font-size: 12pt; }
 }

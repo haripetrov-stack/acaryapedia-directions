@@ -183,12 +183,6 @@ i { font-style: italic; }
   border: 1.5px solid currentColor; white-space: nowrap; background: #fff;
 }
 .st::before { content: ""; width: 9px; height: 9px; border-radius: 50%; border: 2px solid currentColor; flex: none; }
-.st-ok { color: var(--ok); }
-.st-ok::before { background: currentColor; }
-.st-unv { color: var(--warn); }
-.st-unv::before { background: linear-gradient(90deg, currentColor 50%, transparent 50%); }
-.st-ocr { color: var(--red); }
-.st-ocr::before { border-style: dashed; }
 .st-wait { color: var(--ink2); }
 .st-wait::before { border-radius: 0; border-width: 1.5px; background: repeating-linear-gradient(135deg, currentColor 0 2px, transparent 2px 4px); }
 
@@ -326,9 +320,7 @@ a.x::after {
   background: var(--desk); border-top: 1px solid var(--rule); font-size: 13px; color: var(--ink2); flex: none;
 }
 .statusbar a { color: var(--ink); }
-.sb-status, .sb-site { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 16px; }
-.sb-l { font-weight: 600; color: var(--ink); }
-.sb-i { display: inline-flex; align-items: center; gap: 7px; }
+.sb-site { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 16px; }
 
 /* ---------- home page: the desk at rest ---------- */
 .home-wrap { max-width: 1280px; margin: 0 auto; padding: 4px 16px 32px; }

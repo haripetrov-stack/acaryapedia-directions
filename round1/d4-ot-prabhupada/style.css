@@ -117,16 +117,6 @@ body::before { content: ""; position: fixed; inset: 0 auto 0 0; width: var(--spi
 }
 @media (max-width: 345px) { .house__links a:first-child { display: none; } }
 
-/* ---------------------------------------------------- status of a layer -- */
-.st { display: inline-block; font-size: .78rem; font-weight: 600; line-height: 1.2; padding: .2rem .45rem; color: var(--ink); background: transparent; }
-.st--verified { border: 1.5px solid currentColor; }
-.st--unverified { border: 1.5px dashed currentColor; }
-.st--ocr { border: 1.5px dotted currentColor; background: repeating-linear-gradient(135deg, rgba(20, 34, 42, .08) 0 4px, transparent 4px 8px); }
-.on-dark .st, .st.on-dark { color: var(--on-desk); }
-.on-dark .st--ocr { background: repeating-linear-gradient(135deg, rgba(234, 242, 238, .12) 0 4px, transparent 4px 8px); }
-.on-dark .leaf .st { color: var(--ink); }
-.on-dark .leaf .st--ocr { background: repeating-linear-gradient(135deg, rgba(20, 34, 42, .08) 0 4px, transparent 4px 8px); }
-
 .vl-set { display: grid; gap: 0; }
 .vl-set .vl, .iast-verse .vl { display: block; }
 .bn-verse { font-size: clamp(1.45rem, 1.1rem + 1.2vw, 1.95rem); line-height: 1.7; }
@@ -243,7 +233,6 @@ main:has(#lay-comm:not(:checked)) .lay-comm { display: none; }
 .comm:nth-of-type(odd) { background: var(--leaf-mid); }
 .comm h3 { font-size: clamp(1.35rem, 1.1rem + 1.1vw, 1.85rem); }
 .comm .by { margin-top: .3rem; color: var(--ink-soft); font-size: .96rem; }
-.comm .st { margin-top: .6rem; }
 .comm__text { margin-top: 1.2rem; font-size: 1.1rem; line-height: 1.95; max-width: 60ch; white-space: pre-line; overflow-wrap: anywhere; }
 .blank { margin-top: 1.2rem; padding: 1.1rem clamp(1rem, 3vw, 1.6rem) 1.3rem; border: 2px dashed var(--ink-soft); background: repeating-linear-gradient(135deg, rgba(20, 34, 42, .045) 0 7px, transparent 7px 14px); }
 .blank h3 { font-size: 1.2rem; font-family: var(--sans); font-weight: 600; }

@@ -108,7 +108,6 @@
 .pile__sheet { padding: 1.25rem 1.4rem 1.4rem; color: var(--ink); }
 .pile__sheet h3 { font-size: clamp(1.3rem, 1.05rem + 1.1vw, 1.75rem); letter-spacing: -.005em; }
 .pile__sheet .work { margin-top: .35rem; font-size: .9rem; line-height: 1.4; color: var(--ink-soft); }
-.pile__sheet .st { margin-top: .55rem; }
 .pile__sheet .excerpt { margin-top: .9rem; font-size: 1.12rem; line-height: 1.85; }
 .pile__more { margin-top: 1.4rem; font-weight: 600; }
 .pile__more a { color: var(--on-desk); text-decoration-thickness: 2px; }
@@ -128,7 +127,6 @@
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, .8), 0 -6px 18px -6px rgba(4, 14, 18, .55), 0 22px 44px -18px rgba(4, 14, 18, .7); }
   .pile.sc-act--pinned .pile__sheet h3 { font-size: 1.28rem; }
   .pile.sc-act--pinned .pile__sheet .work { font-size: .84rem; margin-top: .25rem; }
-  .pile.sc-act--pinned .pile__sheet .st { margin-top: .4rem; }
   .pile.sc-act--pinned .pile__sheet .excerpt { font-size: 1.02rem; line-height: 1.8; margin-top: .7rem; }
   .pile.sc-act--pinned .pile__more { position: absolute; left: var(--gut); right: var(--gut); z-index: 6; margin: 0;
     top: calc(var(--bar) + 1rem + 5.5rem + var(--sh) + 2 * var(--step) + 1.1rem); }
